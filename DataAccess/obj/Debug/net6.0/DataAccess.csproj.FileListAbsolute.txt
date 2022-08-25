@@ -46,3 +46,15 @@ C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_Web
 C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
 C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\bin\Debug\net6.0\DataAccess.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\obj\Debug\net6.0\DataAccess.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll

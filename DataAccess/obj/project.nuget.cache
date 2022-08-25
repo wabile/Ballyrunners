@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hpb0EF5AKQA4HW4YVuGGGzVgHrfZvnuuwGEXccRtjA6nQNrhEaYN1tlMWBwtIn86gC4VNCukUOl7zDsDAYBiew==",
+  "dgSpecHash": "7cxdzJUi0gDzWVc0Lz0IhC3pKWc/cuSkm9gdXi9tau1Qbef2no04AOt6AgLV5YQipluH4PyQRLktSjd1DpxfJg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anobi\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\anobi\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",

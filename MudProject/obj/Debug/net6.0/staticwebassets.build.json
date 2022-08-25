@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sROf3gYEAzB/+Rud4FK/KCsKzSzWlECA7kXlGDTbXRw=",
+  "Hash": "FhF0I6/ZlyrKLScH2Vo7MJDCTT1U61guO+qGUreMNYQ=",
   "Source": "MudProject",
   "BasePath": "_content/MudProject",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "MudProject\\wwwroot",
       "Source": "MudProject",
-      "ContentRoot": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\MudProject\\wwwroot\\",
       "BasePath": "_content/MudProject",
       "Pattern": "**"
     }
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "C:\\Users\\anobi\\.nuget\\packages\\mudblazor\\6.0.9\\staticwebassets\\MudBlazor.min.js"
     },
     {
-      "Identity": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\MudProject\\wwwroot\\favicon.ico",
       "SourceId": "MudProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\MudProject\\wwwroot\\",
       "BasePath": "_content/MudProject",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",

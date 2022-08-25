@@ -8,149 +8,149 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MudProject
 build_property.RootNamespace = MudProject
-build_property.ProjectDir = C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\
+build_property.ProjectDir = C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\MudProject\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject
+build_property.MSBuildProjectDirectory = C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_App\MudProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/App.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/ActivitieDetails.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/ActivitieDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpdGllRGV0YWlscy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/ActivitieList.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/ActivitieList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpdGllTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/ActivitiesRegistration.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/ActivitiesRegistration.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpdGllc1JlZ2lzdHJhdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/ActivityTest.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/ActivityTest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpdHlUZXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/Champions.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/Champions.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhbXBpb25zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/ComiteeMember_SupportAgencies_Registration.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/ComiteeMember_SupportAgencies_Registration.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29taXRlZU1lbWJlcl9TdXBwb3J0QWdlbmNpZXNfUmVnaXN0cmF0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/Counter.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/Documentation.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/Documentation.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jdW1lbnRhdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/FetchData.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/Index.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/ModuleDetails.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/ModuleDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kdWxlRGV0YWlscy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/ModulesList.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/ModulesList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kdWxlc0xpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/QuestBeha.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/QuestBeha.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVlc3RCZWhhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/QuestDrug.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/QuestDrug.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVlc3REcnVnLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/QuestDrugEdit.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/QuestDrugEdit.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVlc3REcnVnRWRpdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/QuestTraining.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/QuestTraining.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVlc3RUcmFpbmluZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/ReferralForm.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/ReferralForm.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVmZXJyYWxGb3JtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/RefFormDetails.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/RefFormDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVmRm9ybURldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/ReFormList.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/ReFormList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVGb3JtTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/Samples.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/Samples.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FtcGxlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/StudentEditing.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/StudentEditing.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudEVkaXRpbmcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/StudentList.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/StudentList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudExpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/StudentsRegistration.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/StudentsRegistration.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNSZWdpc3RyYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/TableTest.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/TableTest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFibGVUZXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/Test.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/Test.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/TutorEditing.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/TutorEditing.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHV0b3JFZGl0aW5nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/TutorList.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/TutorList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHV0b3JMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/TutorRegistration.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/TutorRegistration.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHV0b3JSZWdpc3RyYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Shared/MainLayout.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Shared/NavMenu.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/_Imports.razor]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/Error.cshtml]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/_Host.cshtml]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_WebApp/MudProject/Pages/_Layout.cshtml]
+[C:/Users/anobi/OneDrive/Organizar Desktop/Documentos/WEEProject/Ballyrunners_App/MudProject/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

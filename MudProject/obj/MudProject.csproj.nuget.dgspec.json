@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\MudProject.csproj": {}
+    "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\MudProject\\MudProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\anobi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anobi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\MudProject.csproj": {
+    "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\MudProject\\MudProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\MudProject.csproj",
+        "projectUniqueName": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\MudProject\\MudProject.csproj",
         "projectName": "MudProject",
-        "projectPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\MudProject.csproj",
+        "projectPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\MudProject\\MudProject.csproj",
         "packagesPath": "C:\\Users\\anobi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\obj\\",
+        "outputPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\MudProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anobi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,8 +93,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_App\\DataAccess\\DataAccess.csproj"
               }
             }
           }
