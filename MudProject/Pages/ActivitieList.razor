@@ -1,0 +1,127 @@
+﻿@page "/activityList"
+
+@using Dapper
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@using System.Data
+@using MySql.Data.MySqlClient
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+@inject IDialogService DialogService
+@inject ISnackbar Snackbar
+
+<PageTitle>Student</PageTitle>
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudGrid>
+        <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h6">Students</MudText></MudItem>
+        <MudItem xs="12" sm="3"><MudTextField T="string" @bind-value="@searchTerm" Placeholder="Search" Class="mt-0"></MudTextField></MudItem>
+        <MudItem xs="12" sm="1"><MudIconButton Icon="@Icons.Filled.Search" Color="Color.Info" @onclick="@SearchStudent"></MudIconButton></MudItem>
+        <MudItem xs="12" sm="1"><MudIconButton Icon="@Icons.Filled.Clear" Color="Color.Secondary" @onclick="@Cancel"></MudIconButton></MudItem>
+        <MudItem xs="12" sm="3"><MudButton @onclick=@Navigate Color="Color.Primary">New Activity</MudButton></MudItem>
+        <MudItem xs="12" sm="4"><MudText></MudText></MudItem>
+
+    </MudGrid>
+    <br /><br />
+    @if (listActivity == null)
+    {
+        <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+    }
+    else
+    {
+        <MudGrid>
+            <MudItem xs="12" sm="8">
+        <HeaderContent>
+            <MudTh style="width: 140px; font-weight: bold; font-size:medium; " Align="left">Type</MudTh>
+            <MudTh style="width: 140px; font-weight: bold; font-size:medium;" Align="left">Name</MudTh>
+            <MudTh style="width: 140px; font-weight: bold; font-size:medium;" Align="left">Start Date</MudTh>
+            <MudTh style="width: 140px; font-weight: bold; font-size:medium;" Align="left">End Date</MudTh>
+            <MudTh style="width: 20px; font-weight: bold; font-size:medium;"></MudTh>
+            <MudTh style="width: 20px; font-weight: bold; font-size:medium;"></MudTh>
+        </HeaderContent>
+
+        @foreach (var a in listActivity.ToList())
+        {
+            if (@a.ActivityName != null)
+            {
+                <RowTemplate>
+                    <MudTd DataLabel="Name" style="width: 140px;" Align="left"><MudText>@a.ActivityType</MudText></MudTd>
+                    <MudTd DataLabel="Surname" style="width: 140px; " Align="left"><MudText>@a.ActivityName</MudText></MudTd>
+                    <MudTd DataLabel="PPS Number" style="width: 140px;" Align="left" DateFormat="dd/MM/yyyy"><MudText>@a.ActivityDateStart</MudText></MudTd>
+                    <MudTd DataLabel="Is Student" style="width: 140px; " Align="left" DateFormat="dd/MM/yyyy"><MudText>@a.ActivityDateEnd</MudText></MudTd>
+                    
+@*                    <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Visibility" Size="Size.Small" href="@($"/activitieDetails/{@a.ActivityId}")"></MudIconButton>
+*@                    
+                    <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Visibility" Size="Size.Small" href="@("/activitieFDetails")"></MudIconButton>
+        
+                    <MudIconButton Color="Color.Error" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="OnButtonClicked">Delete</MudIconButton>
+                            <MudMessageBox @ref="mbox" Title="Warning" CancelText="Cancel">
+                                <MessageContent>
+                                    Deleting can <b><i>not</i></b> be undone!
+                                </MessageContent>
+                                <YesButton>
+                                    <MudButton Variant="Variant.Filled" Color="Color.Error" StartIcon="@Icons.Material.Filled.DeleteForever" @onclick="() => Delete(a.ActivityId)">Delete!</MudButton>
+                                </YesButton>
+                            </MudMessageBox>
+                </RowTemplate> 
+            }
+        }
+        </MudItem>
+        </MudGrid>
+    }
+</MudContainer>
+
+@code {
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo("activitieRegistration");
+    }
+
+    bool fixed_header = true;
+    bool fixed_footer = false;
+    bool studentIs = false;
+
+    List<ActivityModel> listActivity = new List<ActivityModel>();
+    private string searchTerm;
+    protected override async Task OnInitializedAsync()
+
+    {
+        string sql = @"SELECT ActivityType, ActivityName, Location, Address, ActivityDateStart, ActivityDateEnd FROM activity;";
+
+        listActivity = await _data.LoadData<ActivityModel, dynamic>(sql, null, _config.GetConnectionString("MySQLConnection"));
+    }
+
+
+    async Task SearchStudent()
+    {
+        listActivity = listActivity.Where(x =>
+            String.Concat(x.ActivityType, ' ', x.ActivityName)
+                .IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            (x.ActivityDateStart != null)
+        ).ToList();
+    } 
+
+    async Task Cancel()
+    {
+        searchTerm = "";
+        await OnInitializedAsync();
+    }
+
+    MudMessageBox mbox { get; set; }
+
+    private async void OnButtonClicked()
+    {
+        bool? result = await mbox.Show();
+        StateHasChanged();
+    }
+
+    async Task Delete(int detailID)
+    {
+        string sql = "delete from activity where ActivityId =" + detailID;
+        await _data.SaveData(sql, new { }, _config.GetConnectionString("MySqlConnection"));
+        await OnInitializedAsync();
+        Snackbar.Add("Student data deleted.", Severity.Success);
+    }
+}

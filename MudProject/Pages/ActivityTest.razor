@@ -1,0 +1,62 @@
+﻿@page "/activitieFDetails/{currentPerson:int}"
+@*This page shows the details of the selected registered student and allow that student's data to be changed*@
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+
+@*=======================================================Visualize Activitie Informations==========================================================*@
+
+<MudDivider DividerType="DividerType.Middle" Class="my-6" />
+<MudItem xs="12" sm="12"><MudIconButton @onclick=@Navigate Align="Align.Left" Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">New Tutor</MudIconButton></MudItem>
+<MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h5">Activity</MudText></MudItem>
+<MudDivider DividerType="DividerType.Middle" Class="my-6" />
+<MudCard>
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudGrid>
+                <MudItem xs="4"><MudText><b>Activity Type</b></MudText>Travel<MudText></MudText></MudItem>
+                <MudItem xs="4"><MudText><b>ActivityName</b></MudText>National Museum of Ireland<MudText></MudText></MudItem>
+                <MudItem xs="4"><MudText><b>Location</b></MudText><MudText>Dublin</MudText></MudItem>
+                <MudItem xs="6"><MudText><b>Activitie Date - Start</b></MudText>20/08/2022<MudText></MudText></MudItem>
+                <MudItem xs="6"><MudText><b>Activitie Date - End</b></MudText><MudText>20/08/2022</MudText></MudItem>
+
+                <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+
+                <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.body1">Activity Costs</MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Budget</b></MudText><MudText>1500</MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Project Management</b></MudText><MudText></MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Transport</b></MudText><MudText>250</MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Food</b></MudText><MudText>350</MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Activities</b></MudText><MudText>200</MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Resources</b></MudText><MudText>250</MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Stationary</b></MudText><MudText></MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Promotion</b></MudText><MudText></MudText></MudItem>
+                <MudItem xs="12"><MudText><b>IT</b></MudText><MudText></MudText></MudItem>
+                <MudItem xs="12"><MudText><b>"Other"</b></MudText><MudText></MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Other Description</b></MudText><MudText></MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Tutors</b></MudText><MudText>400</MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Venue</b></MudText><MudText></MudText></MudItem>
+                <MudItem xs="12"><MudText><b>Balance</b></MudText><MudText>0</MudText></MudItem>
+            </MudGrid>
+        </CardHeaderContent>
+    </MudCardHeader>
+</MudCard>
+
+<MudGrid>
+    <MudItem xs="12" sm="2"><MudIconButton @onclick=@Navigate Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Return</MudIconButton></MudItem>
+    <MudItem xs="12" sm="7"></MudItem>
+    <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+</MudGrid>
+<MudDivider DividerType="DividerType.Middle" Class="my-6" />
+
+@{
+    void Navigate()
+    {
+        UriHelper.NavigateTo("activityList");
+    }
+}

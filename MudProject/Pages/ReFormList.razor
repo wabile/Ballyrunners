@@ -1,0 +1,57 @@
+﻿@page "/listreform"
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+
+<div>
+    <MudText Typo="Typo.h3">Referral Form List</MudText>
+
+        <input type="text" id="searchBox" name="searchBox"  @onchange="ShowNameSearched"/>
+
+    @if (referral == null)
+    {
+        <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+    }else
+    {
+        @foreach (var a in referral){
+            <MudText Typo="Typo.body1"><a href="@($"/refdetails/{@a.Id}")">@a.RefName</a></MudText>
+        }
+    }
+</div>
+
+@code {
+
+    List<ReferralFormModel>? referral;
+
+    object nameValue;
+
+    // Load the data
+        protected override async Task OnInitializedAsync()
+
+    {
+        string sql = "SELECT * FROM referral";
+        referral = await _data.LoadData<ReferralFormModel, dynamic>(sql, new { }, _config.GetConnectionString("MySQLConnection"));
+    }
+
+
+        private async Task ShowNameSearched(ChangeEventArgs args)
+    {
+        nameValue = args.Value;
+        string astr = nameValue.ToString();
+        string[] arr = astr.Split(' ');
+        if (arr.Count() > 1){
+            string sql = "SELECT * FROM referral WHERE RefName = @RefName;";
+            referral = await _data.LoadData<ReferralFormModel, dynamic>(sql, new { RefName = astr }, _config.GetConnectionString("MySQLConnection"));
+        }
+        else{
+            string sql = "SELECT * FROM referral WHERE RefName = @RefName;";
+            referral = await _data.LoadData<ReferralFormModel, dynamic>(sql, new { RefName = @nameValue }, _config.GetConnectionString("MySQLConnection"));
+        }
+        referral = referral.OrderBy(x => x.Id).ToList();
+    }
+}

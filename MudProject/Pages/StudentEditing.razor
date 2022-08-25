@@ -1,0 +1,314 @@
+﻿@page "/studentEditing/{currentPerson:int}"
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+
+<PageTitle>Student</PageTitle>
+<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+
+    @if (editStatus == false && drugQuestionStatus == false)
+    {
+                @*=======================================================Visualize Student details and Recruitment Informations==========================================================*@
+
+        <MudItem xs="12" sm="12"><MudIconButton @onclick=@Navigate Align="Align.Left" Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Student</MudIconButton></MudItem>
+        <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h5">@newStudentDetail.personalDetails.FirstName @newStudentDetail.personalDetails.Surname</MudText></MudItem>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+        <MudCard>
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudGrid>
+                        <MudItem xs="12"><MudText><b>PPS Number</b></MudText><MudText>@newStudentDetail.personalDetails.PPSN</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>First Name</b></MudText><MudText>@newStudentDetail.personalDetails.FirstName</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Surname</b></MudText><MudText>@newStudentDetail.personalDetails.Surname</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Date of Birth</b></MudText><MudText>@newStudentDetail.personalDetails.DoB</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Gender</b></MudText><MudText>@newStudentDetail.personalDetails.Gender</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Address</b></MudText><MudText>@newStudentDetail.personalDetails.Address1</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Address</b></MudText><MudText>@newStudentDetail.personalDetails.Address2</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Eir Code</b></MudText><MudText>@newStudentDetail.personalDetails.EirCode</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>City</b></MudText><MudText>@newStudentDetail.personalDetails.City</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Phone Number</b></MudText><MudText>@newStudentDetail.personalDetails.PhoneNumber</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Mobile Number</b></MudText><MudText>@newStudentDetail.personalDetails.MobileNumber</MudText></MudItem>
+                        <MudItem xs="12"><MudText><b>E-mail</b></MudText><MudText>@newStudentDetail.personalDetails.EmailAddress</MudText></MudItem>
+                    </MudGrid>
+                </CardHeaderContent>
+            </MudCardHeader>
+        </MudCard>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+        <MudCard>
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudGrid>
+                        <MudItem xs="12"><MudText><b>Education Level</b></MudText><MudText>@newStudentDetail.studentModel.EducationLevel</MudText></MudItem>
+                        <MudItem xs="12"><MudText><b>Notes</b></MudText><MudText>@newStudentDetail.studentModel.Notes</MudText></MudItem>
+                        <MudItem xs="12"><MudText><b>Medical Issue</b></MudText><MudText>@newStudentDetail.studentModel.MedicalIssue</MudText></MudItem>
+                        <MudItem xs="10"><MudText><b>Background Information on Young Person</b></MudText><MudText>@newStudentDetail.studentModel.BackgroundYoungPerson</MudText></MudItem>
+                        <MudItem xs="2"><MudText><b>NextofKin</b></MudText><MudText>@newStudentDetail.studentModel.NextofKin</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Referrer Agency Name</b></MudText><MudText>@newStudentDetail.studentModel.ReferrerAgencyName</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Referrer Name</b></MudText><MudText>@newStudentDetail.studentModel.ReferrerName</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Referrer Address</b></MudText><MudText>@newStudentDetail.studentModel.ReferrerAddress</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Referrer Phone Number</b></MudText><MudText>@newStudentDetail.studentModel.ReferrerPhone</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Referrer E-Mail</b></MudText><MudText>@newStudentDetail.studentModel.ReferrerMail</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Date of Referral</b></MudText><MudText>@newStudentDetail.studentModel.DateOfReferral</MudText></MudItem>
+                    </MudGrid>
+                </CardHeaderContent>
+            </MudCardHeader>
+        </MudCard>
+
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+    }
+
+
+    @if (@newStudentDetail.studentModel.IsStudent == false && editStatus == false && drugQuestionStatus == false)
+    {
+        <MudGrid>
+            <MudItem xs="12" sm="2"><MudIconButton @onclick=@Navigate Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Return</MudIconButton></MudItem>
+            <MudItem xs="12" sm="7"></MudItem>
+            <MudItem xs="12" sm="3"><MudButton Variant="Variant.Filled" Color="Color.Primary" id="editAppt" @onclick="() => EditStudent(newStudentDetail.studentModel.DetailsId)">Complete Registration</MudButton></MudItem>
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+        </MudGrid>
+    }
+
+
+    @if (@newStudentDetail.studentModel.IsStudent == true && editStatus == false && drugQuestionStatus == false)
+    {
+        <MudCard>
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudGrid>
+                        <MudItem xs="6"><MudText><b>Interview</b></MudText><MudText>@newStudentDetail.studentModel.Interview</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Place Offered</b></MudText><MudText>@newStudentDetail.studentModel.PlaceOffered</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Place Accepted</b></MudText><MudText>@newStudentDetail.studentModel.PlaceAccepted</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Registred With Ballymun Job Centre</b></MudText><MudText>@newStudentDetail.studentModel.RegistredWithBLJC</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Guidance Officer</b></MudText><MudText>@newStudentDetail.studentModel.GuidanceOfficer</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Engaged With Other Agencies</b></MudText><MudText>@newStudentDetail.studentModel.EngagedWithOtherAgencies</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Responsibilities</b></MudText><MudText>@newStudentDetail.studentModel.Responsibilities</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Photo Consent</b></MudText><MudText>@newStudentDetail.studentModel.PhotoConsent</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Data Consent</b></MudText><MudText>@newStudentDetail.studentModel.DataConsent</MudText></MudItem>
+                        <MudItem xs="6"><MudText><b>Personal Property Consent</b></MudText><MudText>@newStudentDetail.studentModel.PersonalPropertyConsent</MudText></MudItem>
+                    </MudGrid>
+                </CardHeaderContent>
+            </MudCardHeader>
+
+        </MudCard>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+        <MudGrid>
+        <MudItem xs="12" sm="4"><MudButton Color="Color.Primary"  href="@($"/questionnaireDrugs/{currentPerson}")"  Align="Center">Drugs Questionnaire</MudButton></MudItem>
+        <MudItem xs="12" sm="4"><MudButton Color="Color.Primary"  href="@($"/questionnaireBehaviour/{currentPerson}")"  Align="Center">Offendig Behaviour Questionnaire</MudButton></MudItem>
+        <MudItem xs="12" sm="4"><MudButton Color="Color.Primary"  href="@($"/questionnaireTraining/{currentPerson}")"  Align="Center">Training Questionnaire</MudButton></MudItem>
+       </MudGrid>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+        <MudGrid>
+            <MudItem xs="12" sm="2"><MudIconButton @onclick=@Navigate Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">New Student</MudIconButton></MudItem>
+            <MudItem xs="12" sm="7"></MudItem>
+            <MudItem xs="12" sm="3"><MudButton Variant="Variant.Filled" Color="Color.Primary" id="editAppt" @onclick="() => EditStudent(newStudentDetail.studentModel.DetailsId)">Edit Registration</MudButton></MudItem>
+        </MudGrid>
+    }
+
+    @if (editStatus == true)
+    {
+
+        @*=======================================================Add or Edit Student details and Recruitment Informations==========================================================*@
+
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+        <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h5">Editing</MudText></MudItem>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+        <EditForm Model="@newStudentDetail" OnValidSubmit="@OnValidSubmit">
+            <DataAnnotationsValidator />
+            <MudCard>
+                <MudCardContent>
+                    <MudGrid>
+                        <MudItem xs="12"><MudTextField Label="PPS Number" HelperText="Max 8 hcaracters" @bind-Value="newStudentDetail.personalDetails.PPSN" For="@(() => @newStudentDetail.personalDetails.PPSN)" /></MudItem>
+                        <MudItem xs="6"><MudTextField Label="First Name" HelperText="Max. x characters" @bind-Value="newStudentDetail.personalDetails.FirstName" For="@(() => newStudentDetail.personalDetails.FirstName)" /></MudItem>
+                        <MudItem xs="6"><MudTextField Label="Surname" HelperText="Max. x characters" @bind-Value="newStudentDetail.personalDetails.Surname" For="@(() => newStudentDetail.personalDetails.Surname)" /></MudItem>
+                        <MudItem xs="6"><MudDatePicker Label="Date of Birth" @bind-value="@newStudentDetail.personalDetails.DoB" /></MudItem>
+                        <MudItem xs="6">
+                            <MudSelect T="string" Label="Gender" @bind-Value="newStudentDetail.personalDetails.Gender"
+                                   For="@(() => newStudentDetail.personalDetails.Gender)">
+                                <MudSelectItem T="string" Value="@("Female")" />
+                                <MudSelectItem T="string" Value="@("Male")" />
+                                <MudSelectItem T="string" Value="@("Other")" />
+                                <MudSelectItem T="string" Value="@("Decline")" />
+                            </MudSelect>
+                        </MudItem>
+                        <MudItem xs="6"><MudTextField Label="Address" HelperText=" " @bind-Value="newStudentDetail.personalDetails.Address1" For="@(() => newStudentDetail.personalDetails.Address1)" /></MudItem>
+                        <MudItem xs="6"><MudTextField Label="Address" HelperText=" " @bind-Value="newStudentDetail.personalDetails.Address2" For="@(() => newStudentDetail.personalDetails.Address2)" /></MudItem>
+                        <MudItem xs="6"><MudTextField Label="EirCode" HelperText=" " @bind-Value="newStudentDetail.personalDetails.EirCode" For="@(() => newStudentDetail.personalDetails.EirCode)" /></MudItem>
+                        <MudItem xs="6"><MudTextField Label="City" HelperText=" " @bind-Value="newStudentDetail.personalDetails.City" For="@(() => newStudentDetail.personalDetails.City)" /></MudItem>
+                        <MudItem xs="6"><MudTextField Label="Phone Number" HelperText=" " @bind-Value="newStudentDetail.personalDetails.PhoneNumber" For="@(() => newStudentDetail.personalDetails.PhoneNumber)" /></MudItem>
+                        <MudItem xs="6"><MudTextField Label="Mobile Number" HelperText=" " @bind-Value="newStudentDetail.personalDetails.MobileNumber" For="@(() => newStudentDetail.personalDetails.MobileNumber)" /></MudItem>
+                        <MudItem xs="12"><MudTextField Label="E-Mail" HelperText=" " @bind-Value="newStudentDetail.personalDetails.EmailAddress" For="@(() => newStudentDetail.personalDetails.EmailAddress)" /></MudItem>
+                       <MudItem xs="6"><MudCheckBox Label="Engaged With Other Agencies" Type @bind-value="@newStudentDetail.studentModel.EngagedWithOtherAgencies" For="@(() => @newStudentDetail.studentModel.EngagedWithOtherAgencies)"></MudCheckBox></MudItem>
+                    </MudGrid>
+                </MudCardContent>
+            </MudCard>
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+            <MudCard>
+                <MudCardContent>
+                    <MudGrid>
+                        <MudItem xs="12">
+                            <MudSelect T="string" Label="Education Level" @bind-Value="newStudentDetail.studentModel.EducationLevel"
+                                   For="@(() => newStudentDetail.studentModel.EducationLevel)">
+                                <MudSelectItem T="string" Value="@("Junior Certificate (NFQ Level 3)")" />
+                                <MudSelectItem T="string" Value="@("Leaving Certificate (NFQ Levels 4 and 5)")" />
+                                <MudSelectItem T="string" Value="@("Advanced Certificate – Craft / Higher Certificate(NFQ Level 6)")" />
+                                <MudSelectItem T="string" Value="@("Ordinary Bachelor Degree (NFQ Level 7)")" />
+                                <MudSelectItem T="string" Value="@("Honours Bachelor Degree / Higher Diploma (NFQ Level 8)")" />
+                                <MudSelectItem T="string" Value="@("Masters Degree (NFQ Level 9)")" />
+                            </MudSelect>
+                        </MudItem>
+                        <MudItem xs="12"><MudTextField T="string" Label="Notes" HelperText=" " Variant="Variant.Text" Lines="5" @bind-Value="newStudentDetail.studentModel.Notes" For="@(() => @newStudentDetail.studentModel.Notes)" /></MudItem>
+                        <MudItem xs="12"><MudTextField Label="Medical Issue" HelperText=" " @bind-Value="@newStudentDetail.studentModel.MedicalIssue" For="@(() => @newStudentDetail.studentModel.MedicalIssue)" /></MudItem>
+                        <MudItem xs="10"><MudTextField Label="Background Information on Young Person" HelperText=" " @bind-Value="@newStudentDetail.studentModel.BackgroundYoungPerson" For="@(() => @newStudentDetail.studentModel.BackgroundYoungPerson)" /></MudItem>
+                        <MudItem xs="2"><MudCheckBox Label="Next of Kin" @bind-Checked="@newStudentDetail.studentModel.NextofKin" For="@(() => @newStudentDetail.studentModel.NextofKin)"></MudCheckBox></MudItem>
+
+                        <MudItem xs="12">
+                            <MudSelect T="string" Label="Referrer Agency" @bind-Value="newStudentDetail.studentModel.ReferrerAgencyName"
+                                   For="@(() => newStudentDetail.studentModel.ReferrerAgencyName)">
+                                <MudSelectItem T="string" Value="@("")" />
+                                <MudSelectItem T="string" Value="@("Probation Service")" />
+                                <MudSelectItem T="string" Value="@("Án Garda Síochána")" />
+                                <MudSelectItem T="string" Value="@("Ballymun Regional Youth Resource (BRYR)")" />
+                                <MudSelectItem T="string" Value="@("Ballymun Youth Action Project (BYAP)")" />
+                                <MudSelectItem T="string" Value="@("Ballymun Job Centre")" />
+                                <MudSelectItem T="string" Value="@("Ballark Training Centre")" />
+                                <MudSelectItem T="string" Value="@("Ballymun Youthreach")" />
+                                <MudSelectItem T="string" Value="@("STAR Addiction Service")" />
+                                <MudSelectItem T="string" Value="@("Self Referral")" />
+                                <MudSelectItem T="string" Value="@("Other")" />
+                            </MudSelect>
+                        </MudItem>
+                            <MudItem xs="6"><MudTextField Label=" " HelperText=" " @bind-Value="@newStudentDetail.studentModel.ReferrerAgencyName" For="@(() => @newStudentDetail.studentModel.ReferrerAgencyName)" /></MudItem>
+                        <MudItem xs="6"><MudTextField Label="Referrer Name" HelperText=" " @bind-Value="@newStudentDetail.studentModel.ReferrerName" For="@(() => @newStudentDetail.studentModel.ReferrerName)" /></MudItem>
+                        <MudItem xs="6"><MudTextField Label="Referrer Address" HelperText=" " @bind-Value="@newStudentDetail.studentModel.ReferrerAddress" For="@(() => @newStudentDetail.studentModel.ReferrerAddress)" /></MudItem>
+                        <MudItem xs="6"><MudTextField Label="Referrer Phone Number" HelperText=" " @bind-Value="@newStudentDetail.studentModel.ReferrerPhone" For="@(() => @newStudentDetail.studentModel.ReferrerPhone)" /></MudItem>
+                        <MudItem xs="6"><MudTextField Label="Referrer E-Mail" HelperText=" " @bind-Value="@newStudentDetail.studentModel.ReferrerMail" For="@(() => @newStudentDetail.studentModel.ReferrerMail)" /></MudItem>
+                        <MudItem xs="6"><MudDatePicker PickerVariant="PickerVariant.Dialog" Label="Date of Referral" @bind-Date="@newStudentDetail.studentModel.DateOfReferral" DateFormat="dd/MM/yyyy" /></MudItem>
+                    </MudGrid>
+                </MudCardContent>
+            </MudCard>
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+            <MudCard>
+                <MudCardContent>
+                    <MudGrid>
+
+                        <MudItem xs="6"><MudCheckBox Label="Interview" @bind-Checked="@newStudentDetail.studentModel.Interview" For="@(() => @newStudentDetail.studentModel.Interview)"></MudCheckBox></MudItem>
+                        <MudItem xs="6"><MudCheckBox Label="Place Offered" @bind-Checked="@newStudentDetail.studentModel.PlaceOffered" For="@(() => @newStudentDetail.studentModel.PlaceOffered)"></MudCheckBox></MudItem>
+                        <MudItem xs="6"><MudCheckBox Label="Place Accepted" @bind-Checked="@newStudentDetail.studentModel.PlaceAccepted" For="@(() => @newStudentDetail.studentModel.PlaceAccepted)"></MudCheckBox></MudItem>
+                        <MudItem xs="6"><MudCheckBox Label="Registred With BLJC" @bind-Checked="@newStudentDetail.studentModel.RegistredWithBLJC" For="@(() => @newStudentDetail.studentModel.RegistredWithBLJC)"></MudCheckBox></MudItem>
+                        <MudItem xs="12">
+                            <MudSelect T="string" Label="Guidance Officer" @bind-Value="newStudentDetail.studentModel.GuidanceOfficer"
+                                   For="@(() => newStudentDetail.studentModel.GuidanceOfficer)">
+                                <MudSelectItem T="string" Value="@("Patricia Kavanagh")" />
+                                <MudSelectItem T="string" Value="@("Elaine Daly")" />
+                                <MudSelectItem T="string" Value="@("Ruth Brant")" />
+                                <MudSelectItem T="string" Value="@("Bridget Varley")" />
+                                <MudSelectItem T="string" Value="@("Shannen Brennan")" />
+                                <MudSelectItem T="string" Value="@("Ronan Scally")" />
+                                <MudSelectItem T="string" Value="@("Ellen Scanlon")" />
+                                <MudSelectItem T="string" Value="@("Sandra Heffernan")" />
+                                <MudSelectItem T="string" Value="@("Mandy Creevy")" />
+                                <MudSelectItem T="string" Value="@("Carol Lynch")" />
+                                <MudSelectItem T="string" Value="@("Alyson Lyons")" />
+                            </MudSelect>
+                        </MudItem>
+                        
+                        <MudItem xs="6"><MudCheckBox Label="Engaged With Other Agencies" @bind-Checked="@newStudentDetail.studentModel.EngagedWithOtherAgencies" For="@(() => @newStudentDetail.studentModel.EngagedWithOtherAgencies)"></MudCheckBox></MudItem>
+                        <MudItem xs="6"><MudCheckBox Label="Responsibilities" @bind-Checked="@newStudentDetail.studentModel.Responsibilities" For="@(() => @newStudentDetail.studentModel.Responsibilities)"></MudCheckBox></MudItem>
+                        <MudItem xs="6"><MudCheckBox Label="Photo Consent" @bind-Checked="@newStudentDetail.studentModel.PhotoConsent" For="@(() => @newStudentDetail.studentModel.PhotoConsent)"></MudCheckBox></MudItem>
+                        <MudItem xs="6"><MudCheckBox Label="Data Consent" @bind-Checked="@newStudentDetail.studentModel.DataConsent" For="@(() => @newStudentDetail.studentModel.DataConsent)"></MudCheckBox></MudItem>
+                        <MudItem xs="6"><MudCheckBox Label="Personal Property Consent" @bind-Checked="@newStudentDetail.studentModel.PersonalPropertyConsent" For="@(() => @newStudentDetail.studentModel.PersonalPropertyConsent)"></MudCheckBox></MudItem>
+                    </MudGrid>
+                </MudCardContent>
+            </MudCard>
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+            <MudGrid>
+                <MudItem xs="12" sm="2"><MudButton @onclick=@Navigate2 Variant="Variant.Filled" Color="Color.Primary">Cancel</MudButton></MudItem>
+                <MudItem xs="12" sm="9"></MudItem>
+                <MudItem xs="12" sm="1"><MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton></MudItem>
+            </MudGrid>
+        </EditForm>
+
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+    }
+</MudContainer>
+
+
+@code {
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo("studentList");
+    }
+
+    void Navigate2()
+    {
+        editStatus = false;
+        drugQuestionStatus = false;
+    }
+
+    [Parameter]
+    public int currentPerson { get; set; }
+
+    // booleans to determine what to display in the UI
+    bool editStatus = false;
+    bool deleteErrorMessage = false;
+    bool drugQuestionStatus = false;
+
+    // error message for db delete exception
+    string dbErrorMessage = "";
+
+    // variable to keep track of the current appt being edited
+    int studentBeingEdited;
+
+    List<PersonalDetailsModel>? details;
+    List<StudentModel>? Studentdetails;
+
+    private StudentDetailsModel newStudentDetail = new StudentDetailsModel();
+
+    // Load the initial data
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = "SELECT * FROM personal_details WHERE DetailsId = " + currentPerson;
+        details = await _data.LoadData<PersonalDetailsModel, dynamic>(sql, new { }, _config.GetConnectionString("MySQLConnection"));
+        string sql1 = "SELECT * FROM students WHERE DetailsId = " + currentPerson;
+        Studentdetails = await _data.LoadData<StudentModel, dynamic>(sql1, new { }, _config.GetConnectionString("MySQLConnection"));
+        newStudentDetail.personalDetails = details.FirstOrDefault();
+        newStudentDetail.studentModel = Studentdetails.FirstOrDefault();
+    }
+
+    private async Task OnValidSubmit()
+    {
+        string sqlUpdatePerson = "Update personal_details SET PPSN = @PPSN, FirstName = @FirstName, Surname = @Surname, DoB = @DoB, Gender = @Gender, Address1 = @Address1, Address2 = @Address2, EirCode = @EirCode, City = @City, PhoneNumber = @PhoneNumber, MobileNumber = @MobileNumber, EmailAddress = @EmailAddress" +
+            " where DetailsId =" + currentPerson;
+
+        await _data.SaveData(sqlUpdatePerson, newStudentDetail.personalDetails, _config.GetConnectionString("MySqlConnection"));
+        string sqlUpdateStudent = "Update students SET  DetailsId = @DetailsId, EducationLevel = @EducationLevel, ReferralSource = @ReferralSource," +
+        " Interview = @Interview, PlaceOffered = @PlaceOffered, PlaceAccepted = @PlaceAccepted, RegistredWithBLJC = @RegistredWithBLJC, " +
+        "GuidanceOfficer = @GuidanceOfficer, EngagedWithOtherAgencies = @EngagedWithOtherAgencies, Responsibilities = @Responsibilities, PhotoConsent = @PhotoConsent," +
+        "DataConsent = @DataConsent, PersonalPropertyConsent = @PersonalPropertyConsent, Notes = @Notes," +
+        "IsStudent = 1 where DetailsId =" + currentPerson;
+        await _data.SaveData(sqlUpdateStudent, newStudentDetail.studentModel, _config.GetConnectionString("MySqlConnection"));
+        drugQuestionStatus = false;
+        editStatus = false;
+        StateHasChanged();
+    }
+
+    //Edit Form
+    private async Task EditStudent(int id)
+    {
+        editStatus = true;
+        studentBeingEdited = id;
+    }
+
+    private async Task EditDrugQuestion(int id)
+    {
+        drugQuestionStatus = true;
+        studentBeingEdited = id;
+    }
+
+}

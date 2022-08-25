@@ -1,0 +1,92 @@
+﻿@page "/tutorRegistration"
+
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+<PageTitle>Student</PageTitle>
+<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+    <EditForm Model="@newTutor" OnValidSubmit="@SubmitPersonalDetails">
+        <DataAnnotationsValidator />
+        <MudGrid>
+            <MudItem xs="12" sm="12"><MudIconButton @onclick=@Navigate Align="Align.Left" Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Tutor Registration</MudIconButton></MudItem>
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudGrid>
+                            <MudItem xs="12"><MudTextField Label="PPS Number" HelperText="Max 8 hcaracters" @bind-Value="newTutor.personalDetails.PPSN" For="@(() => @newTutor.personalDetails.PPSN)" /></MudItem>
+                            <MudItem xs="6"><MudTextField Label="First Name" HelperText="Max. x characters" @bind-Value="newTutor.personalDetails.FirstName" For="@(() => newTutor.personalDetails.FirstName)" /></MudItem>
+                            <MudItem xs="6"><MudTextField Label="Surname" HelperText="Max. x characters" @bind-Value="newTutor.personalDetails.Surname" For="@(() => newTutor.personalDetails.Surname)" /></MudItem>
+                            <MudItem xs="6"><MudDatePicker Label="Date of Birth" @bind-value="@newTutor.personalDetails.DoB" /></MudItem>
+                            <MudItem xs="6">
+                                <MudSelect T="string" Label="Gender" @bind-Value="newTutor.personalDetails.Gender"
+                                           For="@(() => newTutor.personalDetails.Gender)">
+                                    <MudSelectItem T="string" Value="@("Female")" />
+                                    <MudSelectItem T="string" Value="@("Male")" />
+                                    <MudSelectItem T="string" Value="@("Other")" />
+                                    <MudSelectItem T="string" Value="@("Decline")" />
+                                </MudSelect>
+                            </MudItem>
+                            <MudItem xs="6"><MudTextField Label="Address" HelperText=" " @bind-Value="newTutor.personalDetails.Address1" For="@(() => newTutor.personalDetails.Address1)" /></MudItem>
+                            <MudItem xs="6"><MudTextField Label="Address" HelperText=" " @bind-Value="newTutor.personalDetails.Address2" For="@(() => newTutor.personalDetails.Address2)" /></MudItem>
+                            <MudItem xs="6"><MudTextField Label="EirCode" HelperText=" " @bind-Value="newTutor.personalDetails.EirCode" For="@(() => newTutor.personalDetails.EirCode)" /></MudItem>
+                            <MudItem xs="6"><MudTextField Label="City" HelperText=" " @bind-Value="newTutor.personalDetails.City" For="@(() => newTutor.personalDetails.City)" /></MudItem>
+                            <MudItem xs="6"><MudTextField Label="Phone Number" HelperText=" " @bind-Value="newTutor.personalDetails.PhoneNumber" For="@(() => newTutor.personalDetails.PhoneNumber)" /></MudItem>
+                            <MudItem xs="6"><MudTextField Label="Mobile Number" HelperText=" " @bind-Value="newTutor.personalDetails.MobileNumber" For="@(() => newTutor.personalDetails.MobileNumber)" /></MudItem>
+                            <MudItem xs="12"><MudTextField Label="E-Mail" HelperText=" " @bind-Value="newTutor.personalDetails.EmailAddress" For="@(() => newTutor.personalDetails.EmailAddress)" /></MudItem>
+
+                            <MudItem xs="6"><MudTextField Label="Skills" HelperText=" " @bind-Value="newTutor.tutorModel.Skills" For="@(() => newTutor.tutorModel.Skills)" /></MudItem>
+                            <MudItem xs="6"><MudTextField Label="Salary" HelperText=" " @bind-Value="newTutor.tutorModel.HourlyRate" For="@(() => newTutor.tutorModel.HourlyRate)" /></MudItem>
+                            <MudItem xs="6"><MudCheckBox Label="Received CV?" @bind-Checked="@newTutor.tutorModel.RecivedCV" For="@(() => newTutor.tutorModel.RecivedCV)"></MudCheckBox></MudItem>
+                            <MudItem xs="6"><MudCheckBox Label="Was the Contract Signed?" @bind-Checked="@newTutor.tutorModel.ContractSigned" For="@(() => @newTutor.tutorModel.ContractSigned)"></MudCheckBox></MudItem>
+                        </MudGrid>
+                        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+                        <MudGrid>
+                                <MudItem xs="12" sm="2"><MudIconButton @onclick=@Navigate Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Back</MudIconButton></MudItem>
+                                <MudItem xs="12" sm="8"></MudItem>
+                                <MudItem xs="12" sm="2"><MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Submit</MudButton></MudItem>
+                        </MudGrid>
+                        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+
+                    </CardHeaderContent>
+                </MudCardHeader>
+            </MudCard>
+        </MudGrid>
+    </EditForm>
+</MudContainer>
+
+
+
+@code {
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo("tutorList");
+    }
+
+    private TutorDetailsModel newTutor = new TutorDetailsModel();
+
+    bool RecivedCV = true;
+    bool ContractSigned = true;
+
+
+    private async Task SubmitPersonalDetails()
+    {
+
+        string sqlInsertPersonalDetails = "INSERT INTO personal_details (PPSN, FirstName, Surname, DoB, Gender, Address1, Address2, EirCode, City, PhoneNumber, MobileNumber, EmailAddress)" +
+            "VALUES (@PPSN, @FirstName, @Surname, @DoB, @Gender, @Address1, @Address2, @EirCode, @City, @PhoneNumber, @MobileNumber, @EmailAddress);";
+
+        var personalDetailsId = await _data.CreateRecordReturnID(sqlInsertPersonalDetails, newTutor.personalDetails, _config.GetConnectionString("MySqlConnection"));
+        Console.WriteLine(personalDetailsId);
+
+        newTutor.tutorModel.DetailsId = personalDetailsId;
+        string sqlInsertTutor = "INSERT INTO Tutors ( DetailsID, TutorID, Skills, HourlyRate, ContractSigned ) " +
+               "VALUES (@DetailsId, @TutorID, @Skills, @HourlyRate, @ContractSigned);";
+
+        await _data.SaveData(sqlInsertTutor, newTutor.tutorModel, _config.GetConnectionString("MySqlConnection"));
+        newTutor = new TutorDetailsModel();
+    }
+}
+

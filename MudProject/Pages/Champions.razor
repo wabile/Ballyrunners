@@ -1,0 +1,33 @@
+﻿@page "/champions" 
+@*This page list the PPS Number, Name and Surname of the tutors registred
+  and allow the user navegate to the page tutorEditing by clicking on the tutor name*@
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+<div class="container">
+        <MudText Typo="Typo.h3">Champions of Champions</MudText>>
+        @if (listStudents == null){
+            <p><em>Loading ...</em></p>
+        }else{
+            @*Need a search box to search student by pps number or full name*@
+            @foreach (var a in listStudents){
+               <MudText href="@($"/tutorEditing/{@a.StudentId}")">@a.GuidanceOfficer</MudText>
+            }
+        }
+</div>
+
+@code {
+    List<StudentModel>? listStudents;
+
+    protected override async Task OnInitializedAsync(){
+        string sql = "SELECT * FROM students"; 
+        /*need to select both, personal_details and students table because TutorId will be used as parameter 
+         * and need to show FirstName and Surname from personal_details. Use PPSN (PPS Number to serach for an specific student*/
+        listStudents = await _data.LoadData<StudentModel, dynamic>(sql, new { }, _config.GetConnectionString("MySQLConnection"));
+    }
+}

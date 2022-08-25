@@ -1,0 +1,72 @@
+﻿@page "/committee_agencieRegistration"
+
+@*@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+<MudExpansionPanels MultiExpansion="true">
+    <MudExpansionPanel Text="Register new Student">
+        <EditForm Model="@newDetails" OnValidSubmit="@OnValidSubmit">
+            <DataAnnotationsValidator />
+            <MudGrid>
+                <MudItem xs="12" sm="12">
+                    <MudCard>
+                        <MudCardContent>
+
+                            <MudTextField Label="First Name" HelperText="Max. x characters" @bind-Value="newDetails.FirstName" For="@(() => newDetails.FirstName)" />
+                            <MudTextField Label="Surname" HelperText="Max. x characters" @bind-Value="newDetails.Surname" For="@(() => newDetails.Surname)" />
+                            <MudTextField Label="Address" HelperText=" " @bind-Value="newDetails.Address1" For="@(() => newDetails.Address1)" />
+                            <MudTextField Label="Address" HelperText=" " @bind-Value="newDetails.Address2" For="@(() => newDetails.Address2)" />
+                            <MudTextField Label="EirCode" HelperText=" " @bind-Value="newDetails.EirCode" For="@(() => newDetails.EirCode)" />
+                            <MudTextField Label="City" HelperText=" " @bind-Value="newDetails.City" For="@(() => newDetails.City)" />
+                            <MudTextField Label="Phone Number" HelperText=" " @bind-Value="newDetails.PhoneNumber" For="@(() => newDetails.PhoneNumber)" />
+                            <MudTextField Label="Mobile Number" HelperText=" " @bind-Value="newDetails.MobileNumber" For="@(() => newDetails.MobileNumber)" />
+                            <MudTextField Label="E-Mail" HelperText=" " @bind-Value="newDetails.EmailAddress" For="@(() => newDetails.EmailAddress)" />
+
+
+                            <MudTextField Label="Agencie Name" HelperText=" " @bind-Value="newStudent.EducationLevel" For="@(() => newStudent.EducationLevel)" />
+
+                        </MudCardContent>
+                        <MudCardActions>
+                            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Submit</MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                </MudItem>
+            </MudGrid>
+        </EditForm>
+    </MudExpansionPanel>
+</MudExpansionPanels>*@
+
+
+@code {
+    //private PermissionsModel newStudent = new PermissionsModel();
+    //private PersonalDetailsModel newDetails = new PersonalDetailsModel();
+
+    //private async Task OnValidSubmit()
+    //{
+    //    string sql = "INSERT INTO personal_details (PPSN, FirstName, Surname, Address1, Address2, EirCode, City, PhoneNumber, MobileNumber, EmailAddress)" +
+    //    "VALUES (@PPSN, @FirstName, @Surname, @Address1, @Address2, @EirCode, @City, @PhoneNumber, @MobileNumber, @EmailAddress);";
+    //    await _data.SaveData(sql, newDetails, _config.GetConnectionString("MySqlConnection"));
+    //    newDetails = new PersonalDetailsModel();
+    //}
+
+    //private async Task OnValidSubmit2()
+    //{
+    //    string sql = "INSERT INTO committee_members (OrganizationName)" +
+    //            "VALUES ((SELECT DetailsId FROM personal_details WHERE DetailsId = LAST_INSERT_ID()) @OrganizationName);";
+    //    await _data.SaveData(sql, newStudent, _config.GetConnectionString("MySqlConnection"));
+    //    newStudent = new PermissionsModel();
+    //}
+
+    //    private async Task OnValidSubmit3()
+    //{
+    //    string sql = "INSERT INTO support_agencies (AgencyName)" +
+    //            "VALUES ((SELECT DetailsId FROM personal_details WHERE DetailsId = LAST_INSERT_ID()) @OrganizationName);";
+    //    await _data.SaveData(sql, newStudent, _config.GetConnectionString("MySqlConnection"));
+    //    newStudent = new PermissionsModel();
+    //}
+
+}
+

@@ -1,0 +1,45 @@
+﻿@page "/"
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+@inject IJSRuntime JsRuntime
+
+<PageTitle>Home</PageTitle>
+<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+    <MudGrid>
+        <MudItem>
+        <MudButton @onclick=@Navigate Color="Color.Primary">Student</MudButton>
+        </MudItem>
+    </MudGrid>
+        <MudGrid>
+        <MudItem>
+        <MudButton @onclick=@Navigate2 Color="Color.Primary">Tutor</MudButton>
+        </MudItem>
+    </MudGrid>
+        <MudGrid>
+        <MudItem>
+        <MudButton @onclick=@Navigate3 Color="Color.Primary">Activity</MudButton>
+        </MudItem>
+    </MudGrid>
+</MudContainer>
+@code {
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo("studentList");
+    }
+
+    void Navigate2()
+    {
+        UriHelper.NavigateTo("tutorList");
+    }
+
+    void Navigate3()
+    {
+        UriHelper.NavigateTo("activityList");
+    }
+}

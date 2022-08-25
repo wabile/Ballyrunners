@@ -1,0 +1,38 @@
+﻿@page "/moduleList" 
+@*This page list the Modules of the project Ballyrunners and shows it start date and end date
+  and allow the user navegate to the page moduleDetail by clicking on the odule name*@
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+<div>
+    <MudText Typo="Typo.h3">Modules</MudText>
+    @if (listCurses == null)
+    {
+        <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+    }
+    else
+    {
+        @*Need a search box to search student by pps number or full name*@
+        @foreach (var a in listCurses)
+        {
+            <MudText href="@($"/moduleDetails/{@a.CurseId}")">@a.CurseName</MudText>
+        }
+    }
+</div>
+
+@code {
+    List<CursesModel>? listCurses;
+
+    // Load the data
+    protected override async Task OnInitializedAsync()
+
+    {
+        string sql = "SELECT * FROM courses";
+        listCurses = await _data.LoadData<CursesModel, dynamic>(sql, new { }, _config.GetConnectionString("MySQLConnection"));
+    }
+}

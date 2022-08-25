@@ -1,0 +1,125 @@
+﻿@page "/questionnaireTraining/{currentPerson:int}"
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+
+@if (editingStatus == false)
+{
+    <MudCard>
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudGrid>
+                    <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h6">Trainning Questionnaire</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Are you currently registered with Equal Youth?</b></MudText><MudText>@newTrainingQuestions.TB01</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Are you in training/education?</b></MudText><MudText>@newTrainingQuestions.TB02</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Do you have qualifications?</b></MudText><MudText>@newTrainingQuestions.TB03</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Are you interested in training?</b></MudText><MudText>@newTrainingQuestions.TB04</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Have you work experience?</b></MudText><MudText>@newTrainingQuestions.TB05</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>What is your ideal job/career?</b></MudText><MudText>@newTrainingQuestions.TB06</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>What services are you currently engaging with?</b></MudText><MudText>@newTrainingQuestions.TB07</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>What do you think stops you from obtaining training?</b></MudText><MudText>@newTrainingQuestions.TB08</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Where do you see yourself in 5 years?</b></MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Ideal</b></MudText><MudText>@newTrainingQuestions.TB09A</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Reality</b></MudText><MudText>@newTrainingQuestions.TB09B</MudText></MudItem>
+                    <MudGrid>
+                        <MudItem xs="12" sm="3"><MudIconButton @onclick=@Navigate Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Back</MudIconButton></MudItem>
+                        <MudItem xs="12" sm="7"></MudItem>
+                        <MudButton Color="Color.Primary" OnClick="EditQuestion">Fill/Edit</MudButton>
+                    </MudGrid>
+                    <MudDivider DividerType="DividerType.Middle" Class="my-2" />
+                </MudGrid>
+            </CardHeaderContent>
+        </MudCardHeader>
+    </MudCard>
+}
+
+@if (editingStatus == true)
+{
+    <MudCard>
+        <MudCardContent>
+            <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h5">Editing</MudText></MudItem>
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+            <EditForm Model="@newTrainingQuestions" OnValidSubmit="@TrainingQuestions">
+                <DataAnnotationsValidator />
+                <MudGrid>
+                    <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h6">Questionnaire</MudText></MudItem>
+
+                    <MudItem xs="12" sm="12"><MudTextField Label="Are you currently registered with Equal Youth?" @bind-Value="newTrainingQuestions.TB01" For="@(() => newTrainingQuestions.TB01)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Are you in training/education?" HelperText=" " @bind-Value="newTrainingQuestions.TB02" For="@(() => newTrainingQuestions.TB02)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Do you have qualifications?" HelperText=" " @bind-Value="newTrainingQuestions.TB03" For="@(() => newTrainingQuestions.TB03)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Are you interested in training?" @bind-Value="newTrainingQuestions.TB04" For="@(() => newTrainingQuestions.TB04)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Have you work experience?" HelperText=" " @bind-Value="newTrainingQuestions.TB05" For="@(() => newTrainingQuestions.TB05)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="What is your ideal job/career?" HelperText=" " @bind-Value="newTrainingQuestions.TB06" For="@(() =>  newTrainingQuestions.TB06)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="What services are you currently engaging with?" @bind-Value="newTrainingQuestions.TB07" For="@(() => newTrainingQuestions.TB07)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="What do you think stops you from obtaining training?" HelperText=" " @bind-Value="newTrainingQuestions.TB08" For="@(() =>  newTrainingQuestions.TB08)" /></MudItem>
+                    <MudItem xs="6"><MudText><b>Where do you see yourself in 5 years?</b></MudText></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Ideal" HelperText=" " @bind-Value="newTrainingQuestions.TB09A" For="@(() => newTrainingQuestions.TB09A)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label=" Reality" HelperText=" " @bind-Value="newTrainingQuestions.TB09B" For="@(() => newTrainingQuestions.TB09B)" /></MudItem>
+
+                    <MudItem xs="12" sm="2"><MudButton @onclick=@ShowQuestions Variant="Variant.Filled" Color="Color.Primary">Cancel</MudButton></MudItem>
+                    <MudItem xs="12" sm="6"></MudItem>
+                    <MudItem xs="12" sm="3"><MudButton ButtonType="ButtonType.Submit" @onclick=@ShowQuestions Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton></MudItem>
+                    <MudDivider DividerType="DividerType.Middle" Class="my-2" />
+                </MudGrid>
+            </EditForm>
+        </MudCardContent>
+    </MudCard>
+}
+
+@code {
+
+    [Parameter]
+    public int currentPerson { get; set; }
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo($"/studentEditing/{currentPerson}");
+    }
+
+    bool editingStatus = false;
+
+    List<TrainingQuestionsModel> details = new List<TrainingQuestionsModel>();
+
+    private TrainingQuestionsModel newTrainingQuestions = new TrainingQuestionsModel();
+
+    // Load the initial data
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = "SELECT * FROM training_questions WHERE StudentId_TFK = " + currentPerson;
+        details = await _data.LoadData<TrainingQuestionsModel, dynamic>(sql, new { }, _config.GetConnectionString("MySQLConnection"));
+    }
+
+    //save data
+    private async Task TrainingQuestions()
+    {
+        int thisQuestion = currentPerson;
+        Console.WriteLine(newTrainingQuestions.StudentId_TFK);
+        string sqlInsertBehaviourQuestion = "INSERT INTO training_questions (StudentId_TFK,TB01,TB02,TB03,TB04,TB05,TB06,TB07,TB08,TB09A,TB09B)" +
+               "VALUES (StudentId_TFK,@TB01,@TB02,@TB03,@TB04,@TB05,@TB06,@TB07,@TB08,@TB09A,@TB09B);";
+        await _data.SaveData(sqlInsertBehaviourQuestion, newTrainingQuestions, _config.GetConnectionString("MySqlConnection"));
+    }
+
+    //update data
+    private async Task UpdateTrainingQuestions()
+    {
+        string sqlBehaviourDrugs = "Update training_questions SET TB01 = @TB01, TB02 = @TB02, TB03 = @TB03, TB04 = @TB04, TB05 = @TB05, TB06 = @TB06, TB07 = @TB07," +
+        " TB08 = @TB08, TB09A = @TB09A, TB09B = @TB09B" +
+            " where StudentId_TFK =" + currentPerson;
+        await _data.SaveData(sqlBehaviourDrugs, UpdateTrainingQuestions, _config.GetConnectionString("MySqlConnection"));
+    }
+
+    private async Task EditQuestion()
+    {
+        editingStatus = true;
+    }
+
+    private async Task ShowQuestions()
+    {
+        editingStatus = false;
+    }
+}

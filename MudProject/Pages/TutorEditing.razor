@@ -1,0 +1,169 @@
+﻿@page "/tutorEditing/{currentPerson:int}"
+@*This page shows the details of the selected registered student and allow that student's data to be changed*@
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+
+@if (editStatus == false)
+{
+    @*=======================================================Visualize Student details and Recruitment Informations==========================================================*@
+
+    <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+    <MudItem xs="12" sm="12"><MudIconButton @onclick=@Navigate Align="Align.Left" Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Tutor</MudIconButton></MudItem>
+    <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h5">@newTutorDetail.personalDetails.FirstName @newTutorDetail.personalDetails.Surname</MudText></MudItem>
+    <MudCard>
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudGrid>
+                    <MudItem xs="12"><MudText><b>PPS Number</b></MudText><MudText>@newTutorDetail.personalDetails.PPSN</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>First Name</b></MudText><MudText>@newTutorDetail.personalDetails.FirstName</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Surname</b></MudText><MudText>@newTutorDetail.personalDetails.Surname</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Date of Birth</b></MudText><MudText>@newTutorDetail.personalDetails.DoB</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Gender</b></MudText><MudText>@newTutorDetail.personalDetails.Gender</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Address</b></MudText><MudText>@newTutorDetail.personalDetails.Address1</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Addres</b>s</MudText><MudText>@newTutorDetail.personalDetails.Address2</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Eir Code</b></MudText><MudText>@newTutorDetail.personalDetails.EirCode</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>City</b></MudText><MudText>@newTutorDetail.personalDetails.City</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Phone Number</b></MudText><MudText>@newTutorDetail.personalDetails.PhoneNumber</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Mobile Number</b></MudText><MudText>@newTutorDetail.personalDetails.MobileNumber</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>E-mail</b></MudText><MudText>@newTutorDetail.personalDetails.EmailAddress</MudText></MudItem>
+
+                    <MudItem xs="6"><MudText><b>Skills</b></MudText><MudText>@newTutorDetail.tutorModel.Skills</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Salary</b></MudText><MudText>@newTutorDetail.tutorModel.HourlyRate</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Received CV?</b></MudText><MudText>@newTutorDetail.tutorModel.RecivedCV</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>"Was the Contract Signed?"</b></MudText><MudText>@newTutorDetail.tutorModel.RecivedCV</MudText></MudItem>
+                </MudGrid>
+            </CardHeaderContent>
+        </MudCardHeader>
+    </MudCard>
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+    <MudGrid>
+
+        <MudItem xs="12" sm="2"><MudIconButton @onclick=@Navigate Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Return</MudIconButton></MudItem>
+        <MudItem xs="12" sm="7"></MudItem>
+        <MudItem xs="12" sm="3"><MudButton Variant="Variant.Filled" Color="Color.Primary" id="editAppt" @onclick="() => EditTutor(newTutorDetail.tutorModel.DetailsId)">Edit</MudButton></MudItem>
+
+    </MudGrid>
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+}
+
+
+
+
+@if (editStatus == true)
+{
+    <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+    <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h5">Editing</MudText></MudItem>
+    <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+    <EditForm Model="@newTutorDetail" OnValidSubmit="@OnValidSubmit">
+        <DataAnnotationsValidator />
+        <MudCard>
+            <MudCardContent>
+                <MudGrid>
+                    <MudItem xs="12"><MudTextField Label="PPS Number" HelperText="Max 8 hcaracters" @bind-Value="newTutorDetail.personalDetails.PPSN" For="@(() => @newTutorDetail.personalDetails.PPSN)" /></MudItem>
+                    <MudItem xs="6"><MudTextField Label="First Name" HelperText="Max. x characters" @bind-Value="newTutorDetail.personalDetails.FirstName" For="@(() => newTutorDetail.personalDetails.FirstName)" /></MudItem>
+                    <MudItem xs="6"><MudTextField Label="Surname" HelperText="Max. x characters" @bind-Value="newTutorDetail.personalDetails.Surname" For="@(() => newTutorDetail.personalDetails.Surname)" /></MudItem>
+                    <MudItem xs="6"><MudDatePicker Label="Date of Birth" @bind-value="@newTutorDetail.personalDetails.DoB" /></MudItem>
+                    <MudItem xs="6">
+                        <MudSelect T="string" Label="Gender" @bind-Value="newTutorDetail.personalDetails.Gender"
+                               For="@(() => newTutorDetail.personalDetails.Gender)">
+                            <MudSelectItem T="string" Value="@("Female")" />
+                            <MudSelectItem T="string" Value="@("Male")" />
+                            <MudSelectItem T="string" Value="@("Other")" />
+                            <MudSelectItem T="string" Value="@("Decline")" />
+                        </MudSelect>
+                    </MudItem>
+                    <MudItem xs="6"><MudTextField Label="Address" HelperText=" " @bind-Value="newTutorDetail.personalDetails.Address1" For="@(() => newTutorDetail.personalDetails.Address1)" /></MudItem>
+                    <MudItem xs="6"><MudTextField Label="Address" HelperText=" " @bind-Value="newTutorDetail.personalDetails.Address2" For="@(() => newTutorDetail.personalDetails.Address2)" /></MudItem>
+                    <MudItem xs="6"><MudTextField Label="EirCode" HelperText=" " @bind-Value="newTutorDetail.personalDetails.EirCode" For="@(() => newTutorDetail.personalDetails.EirCode)" /></MudItem>
+                    <MudItem xs="6"><MudTextField Label="City" HelperText=" " @bind-Value="newTutorDetail.personalDetails.City" For="@(() => newTutorDetail.personalDetails.City)" /></MudItem>
+                    <MudItem xs="6"><MudTextField Label="Phone Number" HelperText=" " @bind-Value="newTutorDetail.personalDetails.PhoneNumber" For="@(() => newTutorDetail.personalDetails.PhoneNumber)" /></MudItem>
+                    <MudItem xs="6"><MudTextField Label="Mobile Number" HelperText=" " @bind-Value="newTutorDetail.personalDetails.MobileNumber" For="@(() => newTutorDetail.personalDetails.MobileNumber)" /></MudItem>
+                    <MudItem xs="12"><MudTextField Label="E-Mail" HelperText=" " @bind-Value="newTutorDetail.personalDetails.EmailAddress" For="@(() => newTutorDetail.personalDetails.EmailAddress)" /></MudItem>
+
+                    <MudItem xs="6"><MudTextField Label="Skills" HelperText=" " @bind-Value="newTutorDetail.tutorModel.Skills" For="@(() => newTutorDetail.tutorModel.Skills)" /></MudItem>
+                    <MudItem xs="6"><MudTextField Label="Salary" HelperText=" " @bind-Value="newTutorDetail.tutorModel.HourlyRate" For="@(() => newTutorDetail.tutorModel.HourlyRate)" /></MudItem>
+                    <MudItem xs="6"><MudCheckBox Label="Received CV?" @bind-Checked="@newTutorDetail.tutorModel.RecivedCV" For="@(() => @newTutorDetail.tutorModel.RecivedCV)"></MudCheckBox></MudItem>
+                    <MudItem xs="6"><MudCheckBox Label="Was the Contract Signed?" @bind-Checked="@newTutorDetail.tutorModel.ContractSigned" For="@(() => @newTutorDetail.tutorModel.ContractSigned)"></MudCheckBox></MudItem>
+                </MudGrid>
+                <MudGrid>
+                    <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Submit</MudButton>
+                    <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+                </MudGrid>
+            </MudCardContent>
+        </MudCard>
+    </EditForm>
+
+}
+
+
+@code {
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo("tutorList");
+    }
+
+    void Navigate2()
+    {
+        editStatus = false;
+        
+    }
+
+    [Parameter]
+    public int currentPerson { get; set; }
+
+    // booleans to determine what to display in the UI
+    bool editStatus = false;
+    bool deleteErrorMessage = false;
+
+    // error message for db delete exception
+    string dbErrorMessage = "";
+
+    // variable to keep track of the current appt being edited
+    int studentBeingEdited;
+
+    List<PersonalDetailsModel>? details;
+    List<TutorModel>? Tutordetails;
+
+    private TutorDetailsModel newTutorDetail = new TutorDetailsModel();
+
+    // Load the initial data
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = "SELECT * FROM personal_details WHERE DetailsId = " + currentPerson;
+        details = await _data.LoadData<PersonalDetailsModel, dynamic>(sql, new { }, _config.GetConnectionString("MySQLConnection"));
+        string sql1 = "SELECT * FROM tutors WHERE DetailsId = " + currentPerson;
+        Tutordetails = await _data.LoadData<TutorModel, dynamic>(sql1, new { }, _config.GetConnectionString("MySQLConnection"));
+        newTutorDetail.personalDetails = details.FirstOrDefault();
+        newTutorDetail.tutorModel = Tutordetails.FirstOrDefault();
+    }
+
+    private async Task OnValidSubmit()
+    {
+        string sqlUpdatePerson = "Update personal_details SET PPSN = @PPSN, FirstName = @FirstName, Surname = @Surname, DoB = @DoB,"+
+        " Gender = @Gender, Address1 = @Address1, Address2 = @Address2, EirCode = @EirCode, City = @City, PhoneNumber = @PhoneNumber, "+
+        "MobileNumber = @MobileNumber, EmailAddress = @EmailAddress" +
+        " where DetailsId =" + currentPerson;
+
+        await _data.SaveData(sqlUpdatePerson, newTutorDetail.personalDetails, _config.GetConnectionString("MySqlConnection"));
+        string sqlUpdateStudent = "Update tutors SET  DetailsId = @DetailsId, Skills = @Skills, HourlyRate = @HourlyRate, RecivedCV = @RecivedCV, "+
+        "ContractSigned = @ContractSigned where DetailsId =" + currentPerson;
+        await _data.SaveData(sqlUpdateStudent, newTutorDetail.tutorModel, _config.GetConnectionString("MySqlConnection"));
+        editStatus = false;
+    }
+
+    //Edit Form
+    private async Task EditTutor(int id)
+    {
+        editStatus = true;
+        studentBeingEdited = id;
+    }
+}
+

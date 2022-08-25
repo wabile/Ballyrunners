@@ -1,0 +1,153 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\MudProject.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\anobi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\anobi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.29, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\MudProject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\MudProject.csproj",
+        "projectName": "MudProject",
+        "projectPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\MudProject.csproj",
+        "packagesPath": "C:\\Users\\anobi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\MudProject\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\anobi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\anobi\\OneDrive\\Organizar Desktop\\Documentos\\WEEProject\\Ballyrunners_WebApp\\DataAccess\\DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[6.0.9, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.29, )"
+            },
+            "ProtectedBrowserStorage.NETStandard": {
+              "target": "Package",
+              "version": "[1.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

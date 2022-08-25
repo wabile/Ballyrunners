@@ -1,0 +1,198 @@
+﻿@page "/activitieDetails/{currentPerson:int}"
+@*This page shows the details of the selected registered student and allow that student's data to be changed*@
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+
+@if (editStatus == false)
+{
+    @*=======================================================Visualize Activitie Informations==========================================================*@
+
+    <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+    <MudItem xs="12" sm="12"><MudIconButton @onclick=@Navigate Align="Align.Left" Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">New Tutor</MudIconButton></MudItem>
+    <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h5">Activity</MudText></MudItem>
+    <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+    <MudCard>
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudGrid>
+                    <MudItem xs="4"><MudText><b>Activity Type</b></MudText><MudText></MudText></MudItem>
+                    <MudItem xs="4"><MudText><b>ActivityName</b></MudText><MudText>@newActivity.ActivityType</MudText></MudItem>
+                    <MudItem xs="4"><MudText><b>Location</b></MudText><MudText>@newActivity.ActivityName</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Activitie Date - Start</b></MudText><MudText>@newActivity.Location</MudText></MudItem>
+                    <MudItem xs="6"><MudText><b>Activitie Date - End</b></MudText><MudText>@newActivity.ActivityDateStart</MudText></MudItem>
+                    
+                    <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+
+                    <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.body1">Activity Costs</MudText></MudItem> 
+                    <MudItem xs="12"><MudText><b>Budget</b>s</MudText><MudText>@newActivity.Budget</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Project Management</b></MudText><MudText>@newActivity.ProjectManagement</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Transport</b></MudText><MudText>@newActivity.Transport</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Food</b></MudText><MudText>@newActivity.Food</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Activities</b></MudText><MudText>@newActivity.Activities</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Resources</b></MudText><MudText>@newActivity.Resources</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Stationary</b></MudText><MudText>@newActivity.Stationary</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Promotion</b></MudText><MudText>@newActivity.Promotion</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>IT</b></MudText><MudText>@newActivity.IT</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>"Other"</b></MudText><MudText>@newActivity.Other</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Other Description</b></MudText><MudText>@newActivity.OtherDescription</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Tutors</b></MudText><MudText>@newActivity.Tutors</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Venue</b></MudText><MudText>@newActivity.Venue</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Balance</b></MudText><MudText>@newActivity.Balance</MudText></MudItem>
+                </MudGrid>
+            </CardHeaderContent>
+        </MudCardHeader>
+    </MudCard>
+
+    <MudGrid>
+        <MudItem xs="12" sm="2"><MudIconButton @onclick=@Navigate Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Return</MudIconButton></MudItem>
+        <MudItem xs="12" sm="7"></MudItem>
+        <MudItem xs="12" sm="3"><MudButton Variant="Variant.Filled" Color="Color.Primary" id="editAppt" @onclick="() => EditTutor(newActivity.ActivityId)">Edit</MudButton></MudItem>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+    </MudGrid>
+    <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+}
+
+
+
+
+@if (editStatus == true)
+{
+<PageTitle>Activity</PageTitle>
+<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+    <EditForm Model="@newActivity" OnValidSubmit="@OnValidSubmit">
+        <DataAnnotationsValidator />
+        <MudGrid>
+            <MudItem xs="12" sm="12"><MudIconButton @onclick=@Navigate Align="Align.Left" Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Activity</MudIconButton></MudItem>
+
+            <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h6">Activity Registration</MudText></MudItem>
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudGrid>
+                            <MudItem xs="12" sm="6"><MudTextField Label="Activity Type" HelperText="i.e. Travel" @bind-Value="newActivity.ActivityType" For="@(() => newActivity.ActivityType)" /></MudItem>
+                            <MudItem xs="12" sm="6"><MudTextField Label="ActivityName" HelperText="i.e. Travel to Cork" @bind-Value="newActivity.ActivityName" For="@(() => newActivity.ActivityName)" /></MudItem>
+                            <MudItem xs="12" sm="4"><MudTextField Label="Location" HelperText="i.e. Museum" @bind-Value="newActivity.Location" For="@(() => newActivity.Location)" /></MudItem>
+                            <MudItem xs="12" sm="4"><MudDatePicker Label="Activitie Date - Start" @bind-value="newActivity.ActivityDateStart" DisableToolbar="true" /></MudItem>
+                            <MudItem xs="12" sm="4"><MudDatePicker Label="Activitie Date - End" @bind-value="newActivity.ActivityDateEnd" DisableToolbar="true" /></MudItem>
+                        </MudGrid>
+                    </CardHeaderContent>
+                </MudCardHeader>
+            </MudCard>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudGrid>
+                            <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.body1">Costs</MudText></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Budget" @bind-Value="newActivity.Budget" For="@(() => newActivity.Budget)" HelperText="@newActivity.Budget.ToString()"/></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Project Management" @bind-Value="newActivity.ProjectManagement" For="@(() => newActivity.ProjectManagement)"/></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Transport" @bind-Value="newActivity.Transport" For="@(() => newActivity.Transport)"/></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Food" @bind-Value="newActivity.Food" For="@(() => newActivity.Food)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Activities" @bind-Value="newActivity.Activities" For="@(() => newActivity.Activities)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Resources" @bind-Value="newActivity.Resources" For="@(() => newActivity.Resources)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Stationary" @bind-Value="newActivity.Stationary" For="@(() => newActivity.Stationary)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Promotion" @bind-Value="newActivity.Promotion" For="@(() => newActivity.Promotion)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="IT" @bind-Value="newActivity.IT" For="@(() => newActivity.IT)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Other" @bind-Value="newActivity.Other" For="@(() => newActivity.Other)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Other Description" @bind-Value="newActivity.OtherDescription" For="@(() => newActivity.OtherDescription)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Tutors" @bind-Value="newActivity.Tutors" For="@(() => newActivity.Tutors)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Venue" @bind-Value="newActivity.Venue" For="@(() => newActivity.Venue)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Balance" @bind-Value="newActivity.Balance" For="@(() => newActivity.Balance)"/></MudItem>
+                            
+                            
+                            <MudButton type="submit" class="btn btn-primary btn-block">Submit</MudButton>
+
+                                <MudText>Total: </MudText>
+                                <MudText>@newActivity.Balance.ToString("N")</MudText>
+
+                            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton>                           
+                        </MudGrid>
+                    </CardHeaderContent>
+                </MudCardHeader>
+            </MudCard>
+        </MudGrid>
+    </EditForm>
+</MudContainer>
+}
+
+
+@code {
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo("tutorList");
+    }
+
+    void Navigate2()
+    {
+        editStatus = false;
+    }
+
+    
+    List<ActivityModel>? details;
+    private ActivityModel newActivity = new ActivityModel();
+
+    private async void HandleValidSubmit()
+    {
+        newActivity.Balance = newActivity.Budget;
+        newActivity.Balance = newActivity.Balance - newActivity.ProjectManagement;
+        newActivity.Balance = newActivity.Balance - newActivity.Transport;
+        newActivity.Balance = newActivity.Balance - newActivity.Food;
+        newActivity.Balance = newActivity.Balance - newActivity.Activities;
+        newActivity.Balance = newActivity.Balance - newActivity.Resources;
+        newActivity.Balance = newActivity.Balance - newActivity.Stationary;
+        newActivity.Balance = newActivity.Balance - newActivity.Promotion;
+        newActivity.Balance = newActivity.Balance - newActivity.IT;
+        newActivity.Balance = newActivity.Balance - newActivity.Other;
+        newActivity.Balance = newActivity.Balance - newActivity.Tutors;
+        newActivity.Balance = newActivity.Balance - newActivity.Venue;
+    }
+
+    [Parameter]
+    public int currentPerson { get; set; }
+
+    // booleans to determine what to display in the UI
+    bool editStatus = false;
+    bool deleteErrorMessage = false;
+
+    // error message for db delete exception
+    string dbErrorMessage = "";
+
+    // variable to keep track of the current appt being edited
+    int studentBeingEdited;
+
+
+    // Load the initial data
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = "SELECT * FROM activity WHERE ActivityId = " + currentPerson;
+        details = await _data.LoadData<ActivityModel, dynamic>(sql, new { }, _config.GetConnectionString("MySQLConnection"));
+        newActivity = details.FirstOrDefault();
+    }
+
+    private async Task OnValidSubmit()
+    {
+        string sqlUpdateActivity = "Update activity SET ActivityType = @ActivityType, ActivityName = @ActivityName,Location = @Location,Address = @Address,ActivityDateStart = @ActivityDateStart,ActivityDateEnd = @ActivityDateEnd,"+
+        "ProjectManagement = @ProjectManagement,Transport = @Transport,Food = @Food,Activities = @Activities,Resources = @Resources,"+
+        "Stationary = @Stationary,Promotion = @Promotion,IT = @IT,Other = @Other,OtherDescription = @OtherDescription,Tutors = @Tutors,Venue = @Venue,Balance = @Balance,Budget = @Budget" +
+        " where DetailsId =" + currentPerson;
+        await _data.SaveData(sqlUpdateActivity, newActivity, _config.GetConnectionString("MySqlConnection"));
+        newActivity = new ActivityModel();
+
+        editStatus = false;
+    }
+
+    //Edit Form
+    private async Task EditTutor(int id)
+    {
+        editStatus = true;
+        studentBeingEdited = id;
+    }
+}
+

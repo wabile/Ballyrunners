@@ -1,0 +1,106 @@
+﻿@page "/activitieRegistration"
+
+@*This page allow the user fill the form to register a new activitie. It sum the values of the costs of the activities and shows the balance.*@
+
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+
+<PageTitle>Activity</PageTitle>
+<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+    <EditForm Model="@newActivity" OnValidSubmit="@OnValidSubmit">
+        <DataAnnotationsValidator />
+        <MudGrid>
+            <MudItem xs="12" sm="12"><MudIconButton @onclick=@Navigate Align="Align.Left" Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">New Activity</MudIconButton></MudItem>
+
+            <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h6">Activity Registration</MudText></MudItem>
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudGrid>
+                            <MudItem xs="12" sm="6"><MudTextField Label="Activity Type" HelperText="i.e. Travel" @bind-Value="newActivity.ActivityType" For="@(() => newActivity.ActivityType)" /></MudItem>
+                            <MudItem xs="12" sm="6"><MudTextField Label="ActivityName" HelperText="i.e. Travel to Cork" @bind-Value="newActivity.ActivityName" For="@(() => newActivity.ActivityName)" /></MudItem>
+                            <MudItem xs="12" sm="4"><MudTextField Label="Location" HelperText="i.e. Museum" @bind-Value="newActivity.Location" For="@(() => newActivity.Location)" /></MudItem>
+                            <MudItem xs="12" sm="4"><MudDatePicker Label="Activitie Date - Start" @bind-value="newActivity.ActivityDateStart" DisableToolbar="true" /></MudItem>
+                            <MudItem xs="12" sm="4"><MudDatePicker Label="Activitie Date - End" @bind-value="newActivity.ActivityDateEnd" DisableToolbar="true" /></MudItem>
+                        </MudGrid>
+                    </CardHeaderContent>
+                </MudCardHeader>
+            </MudCard>
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudGrid>
+                            <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.body1">Activity Costs</MudText></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Budget" @bind-Value="newActivity.Budget" For="@(() => newActivity.Budget)" HelperText="@newActivity.Budget.ToString()" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Project Management" @bind-Value="newActivity.ProjectManagement" For="@(() => newActivity.ProjectManagement)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Transport" @bind-Value="newActivity.Transport" For="@(() => newActivity.Transport)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Food" @bind-Value="newActivity.Food" For="@(() => newActivity.Food)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Activities" @bind-Value="newActivity.Activities" For="@(() => newActivity.Activities)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Resources" @bind-Value="newActivity.Resources" For="@(() => newActivity.Resources)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Stationary" @bind-Value="newActivity.Stationary" For="@(() => newActivity.Stationary)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Promotion" @bind-Value="newActivity.Promotion" For="@(() => newActivity.Promotion)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="IT" @bind-Value="newActivity.IT" For="@(() => newActivity.IT)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Other" @bind-Value="newActivity.Other" For="@(() => newActivity.Other)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Other Description" @bind-Value="newActivity.OtherDescription" For="@(() => newActivity.OtherDescription)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Tutors" @bind-Value="newActivity.Tutors" For="@(() => newActivity.Tutors)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Venue" @bind-Value="newActivity.Venue" For="@(() => newActivity.Venue)" /></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Balance" @bind-Value="newActivity.Balance" For="@(() => newActivity.Balance)" @onchange="HandleValidSubmit" /></MudItem>
+                            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+
+                            <MudToggleIconButton @onclick="HandleValidSubmit" Icon="@Icons.Material.Filled.Calculate" Color="@Color.Error" Title="Off"/>
+
+                            <MudItem xs="12" sm="11"><MudText>Total: @newActivity.Balance.ToString("N")</MudText></MudItem>
+                            <MudItem xs="12" sm="10"><MudText></MudText></MudItem>                            
+                            <MudItem xs="12" sm="2"><MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton></MudItem>
+                            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+                        </MudGrid>
+                    </CardHeaderContent>
+                </MudCardHeader>
+            </MudCard>
+        </MudGrid>
+    </EditForm>
+</MudContainer>
+
+@code {
+
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo("activityList");
+    }
+
+    private ActivityModel newActivity = new ActivityModel();
+
+    private async void HandleValidSubmit()
+    {
+        newActivity.Balance = newActivity.Budget;
+        newActivity.Balance = newActivity.Balance - newActivity.ProjectManagement;
+        newActivity.Balance = newActivity.Balance - newActivity.Transport;
+        newActivity.Balance = newActivity.Balance - newActivity.Food;
+        newActivity.Balance = newActivity.Balance - newActivity.Activities;
+        newActivity.Balance = newActivity.Balance - newActivity.Resources;
+        newActivity.Balance = newActivity.Balance - newActivity.Stationary;
+        newActivity.Balance = newActivity.Balance - newActivity.Promotion;
+        newActivity.Balance = newActivity.Balance - newActivity.IT;
+        newActivity.Balance = newActivity.Balance - newActivity.Other;
+        newActivity.Balance = newActivity.Balance - newActivity.Tutors;
+        newActivity.Balance = newActivity.Balance - newActivity.Venue;
+    }
+
+
+    private async Task OnValidSubmit()
+    {
+        string sql = "INSERT INTO activity (ActivityType, ActivityName, Location, Address, ActivityDateStart, ActivityDateEnd, " +
+        "ProjectManagement, Transport, Food, Activities, Resources, Stationary, Promotion, IT, Other, OtherDescription, Tutors, Venue, Balance, Budget)" +
+        "VALUES (@ActivityType, @ActivityName, @Location, @Address, @ActivityDateStart, @ActivityDateEnd, " +
+        "@ProjectManagement, @Transport, @Food, @Activities, @Resources, @Stationary, @Promotion, @IT, @Other, @OtherDescription, @Tutors, @Venue, @Balance, @Budget);";
+        await _data.SaveData(sql, newActivity, _config.GetConnectionString("MySqlConnection"));
+        newActivity = new ActivityModel();
+    }
+}
+

@@ -1,0 +1,73 @@
+﻿@page "/questionnaireDrugs/{currentPerson:int}"
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+    <MudCard>
+        <MudCardContent>
+            <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h5">Editing</MudText></MudItem>
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+            <EditForm Model="@newDrugQuestion" OnValidSubmit="@DrugQuestions">
+                <DataAnnotationsValidator />
+                <MudGrid>
+                    <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h6">Drugs Questionnaire</MudText></MudItem>
+
+                    <MudItem xs="12" sm="12"><MudTextField Label="What drugs do you take?" @bind-Value="newDrugQuestion.drugQuestion.D01" For="@(() => newDrugQuestion.drugQuestion.D01)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="How frequently do you use drugs?" HelperText=" " @bind-Value="newDrugQuestion.drugQuestion.D02" For="@(() => newDrugQuestion.drugQuestion.D02)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="How much do you spend per week on drugs?" HelperText=" " @bind-Value="newDrugQuestion.drugQuestion.D03" For="@(() => newDrugQuestion.drugQuestion.D03)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="What do you want to change about your drug use?" @bind-Value="newDrugQuestion.drugQuestion.D04" For="@(() => newDrugQuestion.drugQuestion.D04)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Do you know how to reduce/stop drug use?" HelperText=" " @bind-Value="newDrugQuestion.drugQuestion.D05" For="@(() => newDrugQuestion.drugQuestion.D05)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="What have you tried to stop/reduce in the past?" HelperText=" " @bind-Value="newDrugQuestion.drugQuestion.D06" For="@(() => newDrugQuestion.drugQuestion.D06)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Are you known to any services?" @bind-Value="newDrugQuestion.drugQuestion.D07" For="@(() => newDrugQuestion.drugQuestion.D07)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Why do you take drugs?" HelperText=" " @bind-Value="newDrugQuestion.drugQuestion.D08" For="@(() => newDrugQuestion.drugQuestion.D08)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Would you like different ways of dealing with the above issues? " HelperText=" " @bind-Value="newDrugQuestion.drugQuestion.D09" For="@(() => newDrugQuestion.drugQuestion.D09)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="If you, which ones?" @bind-Value="newDrugQuestion.drugQuestion.D10" For="@(() => newDrugQuestion.drugQuestion.D10)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Consequences of drug use?" HelperText=" " @bind-Value="newDrugQuestion.drugQuestion.D11" For="@(() => newDrugQuestion.drugQuestion.D11)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="What is your current alcohol use?" HelperText=" " @bind-Value="newDrugQuestion.drugQuestion.D12" For="@(() => newDrugQuestion.drugQuestion.D12)" /></MudItem>
+
+                    <MudItem xs="12" sm="2"><MudButton @onclick=@Navigate Variant="Variant.Filled" Color="Color.Primary">Cancel</MudButton></MudItem>
+                    <MudItem xs="12" sm="8"></MudItem>
+                    <MudItem xs="12" sm="2"><MudButton ButtonType="ButtonType.Submit" @onclick=@ShowQuestions Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton></MudItem>
+                    <MudDivider DividerType="DividerType.Middle" Class="my-2" />
+                </MudGrid>
+            </EditForm>
+        </MudCardContent>
+    </MudCard>
+
+@code {
+
+    [Parameter]
+    public int currentPerson { get; set; }
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo($"/studentEditing/{currentPerson}");
+    }
+
+    bool editingStatus = false;
+
+    private StudentDrugQuestionModel newDrugQuestion = new StudentDrugQuestionModel();
+    
+    private async Task DrugQuestions()
+    {       
+        newDrugQuestion.drugQuestion.StudentId_DFK = currentPerson;
+        string sqlInsertAnswer = "INSERT INTO drug_questions ( StudentId_DFK, D01,D02,D03,D04,D05,D06,D07,D08,D09,D10,D11,D12)" +
+                                    "VALUES (@StudentId_DFK, @D01,@D02,@D03,@D04,@D05,@D06,@D07,@D08,@D09,@D10,@D11,@D12);";
+        await _data.SaveData(sqlInsertAnswer, newDrugQuestion.drugQuestion, _config.GetConnectionString("MySqlConnection"));
+        editingStatus = false;
+    }
+
+    private async Task EditQuestion()
+    {
+        editingStatus = true;
+    }
+
+    private async Task ShowQuestions()
+    {
+        editingStatus = false;
+    }
+}

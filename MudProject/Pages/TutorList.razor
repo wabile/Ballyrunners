@@ -1,0 +1,132 @@
+﻿@page "/tutorList"
+@*This page list the PPS Number, Name and Surname of the students registred
+  and allow the user navegate to the page StudentEditing by clicking on the student name*@
+
+@using Dapper
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@using System.Data
+@using MySql.Data.MySqlClient
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+@inject IDialogService DialogService
+@inject ISnackbar Snackbar
+
+<PageTitle>Tutor</PageTitle>
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudGrid>
+        <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h6">Tutors</MudText></MudItem>
+        <MudItem xs="12" sm="3"><MudTextField T="string" @bind-value="@searchTerm" Placeholder="Search" Class="mt-0"></MudTextField></MudItem>
+        <MudItem xs="12" sm="1"><MudIconButton Icon="@Icons.Filled.Search" Color="Color.Info" @onclick="@SearchTutor"></MudIconButton></MudItem>
+        <MudItem xs="12" sm="1"><MudIconButton Icon="@Icons.Filled.Clear" Color="Color.Secondary" @onclick="@Cancel"></MudIconButton></MudItem>
+        <MudItem xs="12" sm="3"><MudButton @onclick=@Navigate Color="Color.Primary">New Tutor</MudButton></MudItem>
+        <MudItem xs="12" sm="4"><MudText></MudText></MudItem>
+    </MudGrid>
+
+    @if (listTutor == null)
+    {
+        <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+    }
+    else
+    {
+        <MudGrid>
+            <MudItem xs="12" sm="8">
+                <HeaderContent>
+                    <MudTh style="width: 180px; font-weight: bold; font-size:medium; " Align="Left">PPS Number</MudTh>
+                    <MudTh style="width: 180px; font-weight: bold; font-size:medium;" Align="Left">Name</MudTh>
+                    <MudTh style="width: 180px; font-weight: bold; font-size:medium;" Align="Left">Surname</MudTh>
+                    <MudTh style="width: 20px; font-weight: bold; font-size:medium;" Align="Left"></MudTh>
+                    <MudTh style="width: 20px; font-weight: bold; font-size:medium;" Align="Left"></MudTh>
+                    <MudTh style="width: 20px; font-weight: bold; font-size:medium;"></MudTh>
+                </HeaderContent>
+
+                @foreach (var a in listTutor.ToList())
+                {
+                    if (@a.FirstName != null)
+                    {
+
+                        <RowTemplate>
+                            <MudTd DataLabel="PPS Number" style="width: 180px;" Align="Left"><MudText>@a.PPSN</MudText></MudTd>
+                            <MudTd DataLabel="Name" style="width: 180px;" Align="Left"><MudText>@a.FirstName</MudText></MudTd>
+                            <MudTd DataLabel="Surname" style="width: 180px; " Align="Left"><MudText>@a.Surname</MudText></MudTd>
+                            
+                            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Visibility" Size="Size.Small" href="@($"/TutorEditing/{@a.DetailsId}")"></MudIconButton>
+                            
+                            <MudIconButton Color="Color.Error" Icon="@Icons.Material.Filled.Delete" Size="Size.Small" OnClick="OnButtonClicked">Delete</MudIconButton>
+                            <MudMessageBox @ref="mbox" Title="Warning" CancelText="Cancel">
+                                <MessageContent>
+                                    Deleting can <b><i>not</i></b> be undone!
+                                </MessageContent>
+                                <YesButton>
+                                    <MudButton Variant="Variant.Filled" Color="Color.Error" StartIcon="@Icons.Material.Filled.DeleteForever" @onclick="() => Delete(a.DetailsId)">Delete!</MudButton>
+                                </YesButton>
+                            </MudMessageBox>
+                        </RowTemplate>
+                    }
+                }
+            </MudItem>
+        </MudGrid>
+    }
+</MudContainer>
+
+@code {
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo("tutorRegistration");
+    }
+
+    bool fixed_header = true;
+    bool fixed_footer = false;
+
+    List<TutorListModel> listTutor = new List<TutorListModel>();
+    private string searchTerm;
+    protected override async Task OnInitializedAsync()
+
+    {
+        string sql = @"SELECT TutorId,s.DetailsId,PPSN,FirstName,Surname FROM tutors s INNER join personal_details on s.DetailsId = personal_details.DetailsId;";
+        /*need to select both, personal_details and students table because StudentId will be used as parameter
+         * and need to show FirstName and Surname from personal_details. Use PPSN (PPS Number to serach for an specific student*/
+
+        listTutor = await _data.LoadData<TutorListModel, dynamic>(sql, null, _config.GetConnectionString("MySQLConnection"));
+    }
+    //async Task SearchTutor()
+    //{
+    //    listTutor = listTutor.Where(x => x.FirstName.Contains(searchTerm) || x.PPSN.Contains(searchTerm) || x.Surname.Contains(searchTerm)).ToList();
+    //}
+    async Task SearchTutor()
+    {
+        // concat the first and last name
+        // if the index of the searchterm is higher or equal to 0 add it to the results list
+        // if the ppsn contains the search term, add it to the results list
+        listTutor = listTutor.Where(x =>
+            String.Concat(x.FirstName, ' ', x.Surname)
+                .IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            (x.PPSN != null && x.PPSN.Contains(searchTerm))
+        ).ToList();
+    }
+    async Task Cancel()
+    {
+        searchTerm = "";
+        await OnInitializedAsync();
+    }
+
+    MudMessageBox mbox { get; set; }
+
+    private async void OnButtonClicked()
+    {
+        bool? result = await mbox.Show();
+        StateHasChanged();
+    }
+
+    async Task Delete(int detailID)
+    {
+        string sql = "delete from personal_details where DetailsId =" + detailID;
+        await _data.SaveData(sql, new { }, _config.GetConnectionString("MySqlConnection"));
+        await OnInitializedAsync();
+        Snackbar.Add("Tutor data deleted.", Severity.Success);
+    }
+
+}

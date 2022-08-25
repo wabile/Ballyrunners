@@ -1,0 +1,161 @@
+﻿@page "/studentRegistration"
+
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+<PageTitle>Student</PageTitle>
+<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+    <EditForm Model="@newStudent" OnValidSubmit="@SubmitPersonalDetails">
+        <DataAnnotationsValidator />
+        <MudGrid>
+            <MudItem xs="12" sm="12"><MudIconButton @onclick=@Navigate Align="Align.Left" Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">New Student</MudIconButton></MudItem>
+            <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h5">Registration</MudText></MudItem>
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudGrid>
+                            <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h6">Referral Form</MudText></MudItem>
+                            <br /><br />
+                            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+                            <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.subtitle1">Referred Details</MudText></MudItem>
+
+                            <MudItem xs="12" sm="2"><MudTextField Label="PPS Number" HelperText="Max 8 caracters" @bind-Value="newStudent.personalDetails.PPSN" For="@(() => newStudent.personalDetails.PPSN)" /></MudItem>
+                            <MudItem xs="12" sm="4"><MudTextField Label="First Name" HelperText=" " @bind-Value="newStudent.personalDetails.FirstName" For="@(() => newStudent.personalDetails.FirstName)" /></MudItem>
+                            <MudItem xs="12" sm="4"><MudTextField Label="Surname" HelperText=" " @bind-Value="newStudent.personalDetails.Surname" For="@(() => newStudent.personalDetails.Surname)" /></MudItem>
+                            <MudItem xs="12" sm="2"><MudDatePicker PickerVariant="PickerVariant.Dialog" Label="Date of Birth" @bind-Date="newStudent.personalDetails.DoB" DateFormat="dd/MM/yyyy" /></MudItem>
+                            <MudItem xs="12" sm="3"><MudTextField Label="Address" HelperText=" " @bind-Value="newStudent.personalDetails.Address1" For="@(() => newStudent.personalDetails.Address1)" /></MudItem>
+                            <MudItem xs="12" sm="3"><MudTextField Label="City" HelperText=" " @bind-Value="newStudent.personalDetails.City" For="@(() => newStudent.personalDetails.City)" /></MudItem>
+                            <MudItem xs="12" sm="3"><MudTextField Label="Phone Number" HelperText=" " @bind-Value="newStudent.personalDetails.PhoneNumber" For="@(() => newStudent.personalDetails.PhoneNumber)" /></MudItem>
+                            <MudItem xs="12" sm="3"><MudTextField Label="E-Mail" HelperText=" " @bind-Value="newStudent.personalDetails.EmailAddress" For="@(() => newStudent.personalDetails.EmailAddress)" /></MudItem>
+
+
+                            <MudItem xs="12" sm="10"><MudTextField Label="Medical Issue" HelperText=" " @bind-Value="newStudent.studentModel.MedicalIssue" For="@(() => newStudent.studentModel.MedicalIssue)" /></MudItem>
+                            <MudItem xs="12" sm="2"><MudCheckBox Label="Next of Kin" @bind-Checked="@newStudent.studentModel.NextofKin" For="@(() => newStudent.studentModel.NextofKin)"></MudCheckBox></MudItem>
+                            <MudItem xs="12" sm="12"><MudTextField Label="Background Information on Young Person" HelperText=" " @bind-Value="newStudent.studentModel.BackgroundYoungPerson" For="@(() => newStudent.studentModel.BackgroundYoungPerson)" /></MudItem>
+                            <br /><br />
+
+                            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+                            <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.subtitle1">Referrer Details</MudText></MudItem>
+
+                            <MudItem xs="12">
+                                <MudSelect T="string" Label="Referrer Agency" @bind-Value="newStudent.studentModel.ReferrerAgencyName"
+                                           For="@(() => newStudent.studentModel.ReferrerAgencyName)">
+                                    <MudSelectItem T="string" Value="@("")" />
+                                    <MudSelectItem T="string" Value="@("Probation Service")" />
+                                    <MudSelectItem T="string" Value="@("Án Garda Síochána")" />
+                                    <MudSelectItem T="string" Value="@("Ballymun Regional Youth Resource (BRYR)")" />
+                                    <MudSelectItem T="string" Value="@("Ballymun Youth Action Project (BYAP)")" />
+                                    <MudSelectItem T="string" Value="@("Ballymun Job Centre")" />
+                                    <MudSelectItem T="string" Value="@("Ballark Training Centre")" />
+                                    <MudSelectItem T="string" Value="@("Ballymun Youthreach")" />
+                                    <MudSelectItem T="string" Value="@("STAR Addiction Service")" />
+                                    <MudSelectItem T="string" Value="@("Self Referral")" />
+                                    <MudSelectItem T="string" Value="@("Other")" />
+                                </MudSelect>
+                            </MudItem>
+
+                            <MudItem xs="12" sm="6"><MudTextField Label="Referrer Name" HelperText=" " @bind-Value="newStudent.studentModel.ReferrerName" For="@(() => newStudent.studentModel.ReferrerName)" /></MudItem>
+                            <MudItem xs="12" sm="3"><MudTextField Label="Referrer Address" HelperText=" " @bind-Value="newStudent.studentModel.ReferrerAddress" For="@(() => newStudent.studentModel.ReferrerAddress)" /></MudItem>
+                            <MudItem xs="12" sm="3"><MudTextField Label="Referrer Phone Number" HelperText=" " @bind-Value="newStudent.studentModel.ReferrerPhone" For="@(() => newStudent.studentModel.ReferrerPhone)" /></MudItem>
+                            <MudItem xs="12" sm="3"><MudTextField Label="Referrer E-Mail" HelperText=" " @bind-Value="newStudent.studentModel.ReferrerMail" For="@(() => newStudent.studentModel.ReferrerMail)" /></MudItem>
+                            <MudItem xs="12" sm="3"><MudDatePicker PickerVariant="PickerVariant.Dialog" Label="Date of Referral" @bind-Date="newStudent.studentModel.DateOfReferral" DateFormat="dd/MM/yyyy" /></MudItem>
+
+
+                            <br /><br />
+                            <MudItem xs="12" sm="2"><MudIconButton @onclick=@Navigate Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Back</MudIconButton></MudItem>
+                            <MudItem xs="12" sm="8"></MudItem>
+                            <MudItem xs="12" sm="2"><MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Submit</MudButton></MudItem>
+                            <br /><br />
+                        </MudGrid>
+                    </CardHeaderContent>
+                </MudCardHeader>
+            </MudCard>
+        </MudGrid>
+    </EditForm>
+</MudContainer>
+
+
+@code {
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo("studentList");
+    }
+
+    private StudentDetailsModel newStudent = new StudentDetailsModel();
+
+    bool studentActivity = true;
+    bool studentPhotoConsent = true;
+
+    // booleans to determine what to display in the UI
+    bool questionsStatus = true;
+    bool referralStatus = true;
+    bool registrationStatus = true;
+    bool deleteErrorMessage = false;
+
+    // error message for db delete exception
+    string dbErrorMessage = "";
+
+    // variable to keep track of the current appt being edited
+    int studentBeingEdited;
+
+    private async Task SubmitPersonalDetails()
+    {
+        string sqlInsertPersonalDetails = "INSERT INTO personal_details (PPSN, FirstName, Surname, DoB, Gender, Address1, Address2, EirCode, City, PhoneNumber, MobileNumber, EmailAddress)" +
+            "VALUES (@PPSN, @FirstName, @Surname, @DoB, @Gender, @Address1, @Address2, @EirCode, @City, @PhoneNumber, @MobileNumber, @EmailAddress);";
+
+        var personalDetailsId = await _data.CreateRecordReturnID(sqlInsertPersonalDetails, newStudent.personalDetails, _config.GetConnectionString("MySqlConnection"));
+        Console.WriteLine(personalDetailsId);
+        newStudent.studentModel.DetailsId = personalDetailsId;
+
+        string sqlInsertStudent = "INSERT INTO students ( DetailsId, EducationLevel, ReferralSource, Interview, PlaceOffered, PlaceAccepted, RegistredWithBLJC, " +
+                "GuidanceOfficer, EngagedWithOtherAgencies, Responsibilities, PhotoConsent, DataConsent, PersonalPropertyConsent, Notes, MedicalIssue," +
+                "NextofKin, BackgroundYoungPerson, ReferrerAgencyName, ReferrerName, ReferrerAddress, ReferrerPhone, ReferrerMail, DateOfReferral, IsStudent)" +
+
+               "VALUES (@DetailsId, @EducationLevel, @ReferralSource, @Interview, @PlaceOffered, @PlaceAccepted, @RegistredWithBLJC, " +
+                "@GuidanceOfficer, @EngagedWithOtherAgencies, @Responsibilities, @PhotoConsent, @DataConsent, @PersonalPropertyConsent, @Notes," +
+                " @MedicalIssue, @NextofKin, @BackgroundYoungPerson, @ReferrerAgencyName, @ReferrerName, @ReferrerAddress, @ReferrerPhone, @ReferrerMail, @DateOfReferral, IsStudent);";
+
+        await _data.SaveData(sqlInsertStudent, newStudent.studentModel, _config.GetConnectionString("MySqlConnection"));
+
+        newStudent = new StudentDetailsModel();
+
+    }
+
+
+
+    private async Task Referral()
+    {
+        referralStatus = false;
+
+    }
+
+    private async Task Referral2()
+    {
+        referralStatus = true;
+    }
+
+    private async Task Registration()
+    {
+        registrationStatus = false;
+        referralStatus = true;
+    }
+
+    private async Task Registration2()
+    {
+        registrationStatus = true;
+    }
+
+    private async Task Questions()
+    {
+        questionsStatus = false;
+    }
+
+    private async Task Questions2()
+    {
+        questionsStatus = true;
+    }
+}

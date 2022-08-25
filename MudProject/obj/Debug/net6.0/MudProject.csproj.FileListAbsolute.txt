@@ -1,0 +1,233 @@
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\appsettings.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\MudProject.staticwebassets.runtime.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\MudProject.exe
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\MudProject.deps.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\MudProject.runtimeconfig.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\MudProject.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\Dapper.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\Microsoft.JSInterop.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\MudBlazor.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\DataAccess.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.csproj.AssemblyReference.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.AssemblyInfoInputs.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.AssemblyInfo.cs
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.csproj.CoreCompileInputs.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.RazorAssemblyInfo.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.RazorAssemblyInfo.cs
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\scopedcss\bundle\MudProject.styles.css
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.csproj.CopyComplete
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\refint\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\MudProject.genruntimeconfig.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio 2022\BallyrunnersProject\MudProject\obj\Debug\net6.0\ref\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\appsettings.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\MudProject.staticwebassets.runtime.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\MudProject.exe
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\MudProject.deps.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\MudProject.runtimeconfig.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\MudProject.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Dapper.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Microsoft.JSInterop.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\MudBlazor.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\DataAccess.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.csproj.AssemblyReference.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.AssemblyInfoInputs.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.AssemblyInfo.cs
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.csproj.CoreCompileInputs.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.RazorAssemblyInfo.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.RazorAssemblyInfo.cs
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\scopedcss\bundle\MudProject.styles.css
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.csproj.CopyComplete
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\refint\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\MudProject.genruntimeconfig.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\obj\Debug\net6.0\ref\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Blazored.LocalStorage.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\Blazored.SessionStorage.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\Visual Studio Projects\OqtaneFramework\MudProject\MudProject\bin\Debug\net6.0\ProtectedLocalStore.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\appsettings.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\MudProject.staticwebassets.runtime.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\MudProject.exe
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\MudProject.deps.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\MudProject.runtimeconfig.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\MudProject.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Blazored.LocalStorage.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Blazored.SessionStorage.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Dapper.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Microsoft.JSInterop.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\MudBlazor.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\ProtectedLocalStore.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\DataAccess.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.csproj.AssemblyReference.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.AssemblyInfoInputs.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.AssemblyInfo.cs
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.csproj.CoreCompileInputs.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.RazorAssemblyInfo.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.RazorAssemblyInfo.cs
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\scopedcss\bundle\MudProject.styles.css
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.csproj.CopyComplete
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\refint\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\MudProject.genruntimeconfig.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\BlazorProject\MudProject\obj\Debug\net6.0\ref\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\appsettings.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\MudProject.staticwebassets.runtime.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\MudProject.exe
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\MudProject.deps.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\MudProject.runtimeconfig.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\MudProject.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Blazored.LocalStorage.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Blazored.SessionStorage.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Dapper.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Microsoft.JSInterop.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\MudBlazor.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\ProtectedLocalStore.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\DataAccess.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.csproj.AssemblyReference.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.AssemblyInfoInputs.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.AssemblyInfo.cs
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.csproj.CoreCompileInputs.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.RazorAssemblyInfo.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.RazorAssemblyInfo.cs
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\scopedcss\bundle\MudProject.styles.css
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.csproj.CopyComplete
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\refint\MudProject.dll
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.pdb
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\MudProject.genruntimeconfig.cache
+C:\Users\anobi\OneDrive\Organizar Desktop\Documentos\WEEProject\Ballyrunners_WebApp\MudProject\obj\Debug\net6.0\ref\MudProject.dll

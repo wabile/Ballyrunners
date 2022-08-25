@@ -1,0 +1,123 @@
+﻿@page "/questionnaireBehaviour/{currentPerson:int}"
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+
+@if (editingStatus == false)
+{
+    <MudCard>
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudGrid>
+                    <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h6">Offending Behaviour Questionnaire</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Have you a criminal conviction?</b></MudText><MudText>@newBehaviourQuestion.behaviourQuestion.OB01</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b> If so, how many?</b></MudText><MudText>@newBehaviourQuestion.behaviourQuestion.OB02</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>What types of charges do you pick up?</b></MudText><MudText>@newBehaviourQuestion.behaviourQuestion.OB03</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Are you known to the Gardai?</b></MudText><MudText>@newBehaviourQuestion.behaviourQuestion.OB04</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Incidents?</b></MudText><MudText>@newBehaviourQuestion.behaviourQuestion.OB05</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>What are the consequences of crime?</b></MudText><MudText>@newBehaviourQuestion.behaviourQuestion.OB06</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Why do you engage in offending behavior?</b></MudText><MudText>@newBehaviourQuestion.behaviourQuestion.OB07</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Who/what services could help you stay out of trouble?</b></MudText><MudText>@newBehaviourQuestion.behaviourQuestion.OB08</MudText></MudItem>
+                    <MudItem xs="12"><MudText><b>Are you known to any services? (Including custody, Trinity House & Oberstown)</b></MudText><MudText>@newBehaviourQuestion.behaviourQuestion.OB09</MudText></MudItem>
+                    <MudGrid>
+                        <MudItem xs="12" sm="3"><MudIconButton @onclick=@Navigate Color="Color.Primary" Icon="@Icons.Material.Filled.KeyboardReturn">Back</MudIconButton></MudItem>
+                        <MudItem xs="12" sm="7"></MudItem>
+                        <MudButton Color="Color.Primary" OnClick="EditQuestion">Fill/Edit</MudButton>
+                    </MudGrid>
+                    <MudDivider DividerType="DividerType.Middle" Class="my-2" />
+                </MudGrid>
+            </CardHeaderContent>
+        </MudCardHeader>
+    </MudCard>
+}
+
+@if (editingStatus == true)
+{
+    @*Fill or Edit Offending Behaviour Questions*@
+    <MudCard>
+        <MudCardContent>
+            <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h5">Editing</MudText></MudItem>
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+            <EditForm Model="@newBehaviourQuestion" OnValidSubmit="@BehaviourQuestions">
+                <DataAnnotationsValidator />
+                <MudGrid>
+                    <MudItem xs="12" sm="12"><MudText Align="Align.Left" Typo="Typo.h6">Offending Behaviour Questionnaire</MudText></MudItem>
+
+                    <MudItem xs="12" sm="12"><MudTextField Label="Have you a criminal conviction?" @bind-Value="newBehaviourQuestion.behaviourQuestion.OB01" For="@(() => newBehaviourQuestion.behaviourQuestion.OB01)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="If so, how many?" HelperText=" " @bind-Value="newBehaviourQuestion.behaviourQuestion.OB02" For="@(() => newBehaviourQuestion.behaviourQuestion.OB02)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="What types of charges do you pick up?" HelperText=" " @bind-Value="newBehaviourQuestion.behaviourQuestion.OB03" For="@(() => newBehaviourQuestion.behaviourQuestion.OB03)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Are you known to the Gardai?" @bind-Value="newBehaviourQuestion.behaviourQuestion.OB04" For="@(() => newBehaviourQuestion.behaviourQuestion.OB04)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Incidents?" HelperText=" " @bind-Value="newBehaviourQuestion.behaviourQuestion.OB05" For="@(() => newBehaviourQuestion.behaviourQuestion.OB05)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="What are the consequences of crime?" HelperText=" " @bind-Value="newBehaviourQuestion.behaviourQuestion.OB06" For="@(() =>  newBehaviourQuestion.behaviourQuestion.OB06)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Why do you engage in offending behavior?" @bind-Value="newBehaviourQuestion.behaviourQuestion.OB07" For="@(() => newBehaviourQuestion.behaviourQuestion.OB07)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="Who/what services could help you stay out of trouble?" HelperText=" " @bind-Value="newBehaviourQuestion.behaviourQuestion.OB08" For="@(() => newBehaviourQuestion.behaviourQuestion.OB08)" /></MudItem>
+                    <MudItem xs="12" sm="12"><MudTextField Label="re you known to any services? (Including custody, Trinity House & Oberstown)" HelperText=" " @bind-Value="newBehaviourQuestion.behaviourQuestion.OB09" For="@(() => newBehaviourQuestion.behaviourQuestion.OB09)" /></MudItem>
+
+                    <MudItem xs="12" sm="2"><MudButton @onclick=@ShowQuestions Variant="Variant.Filled" Color="Color.Primary">Cancel</MudButton></MudItem>
+                    <MudItem xs="12" sm="6"></MudItem>
+                    <MudItem xs="12" sm="3"><MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton></MudItem>
+                    <MudDivider DividerType="DividerType.Middle" Class="my-2" />
+                </MudGrid>
+            </EditForm>
+        </MudCardContent>
+    </MudCard>
+    @*End of Offending Behaviour Questions*@
+}
+
+@code {
+
+    [Parameter]
+    public int currentPerson { get; set; }
+
+    void Navigate()
+    {
+        UriHelper.NavigateTo($"/studentEditing/{currentPerson}");
+    }
+
+    bool editingStatus = false;
+
+    List<OffendingBehaviourQuestionModel> details = new List<OffendingBehaviourQuestionModel>();
+
+    private StudentBehavQuestionModel newBehaviourQuestion = new StudentBehavQuestionModel();
+
+    // Load the initial data
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = "SELECT * FROM offending_behaviour_questions WHERE StudentId_OFK = " + currentPerson;
+        details = await _data.LoadData<OffendingBehaviourQuestionModel, dynamic>(sql, new { }, _config.GetConnectionString("MySQLConnection"));
+    }
+
+    //Save data
+    private async Task BehaviourQuestions()
+    {
+        newBehaviourQuestion.behaviourQuestion.StudentId_OFK = currentPerson;
+        string sqlInsertBehaviourQuestion = "INSERT INTO offending_behaviour_questions (StudentId_OFK,OB01,OB02,OB03,OB04,OB05,OB06,OB07,OB08,OB09)" +
+               "VALUES (StudentId_OFK,@OB01,@OB02,@OB03,@OB04,@OB05,@OB06,@OB07,@OB08,@OB09);";
+        await _data.SaveData(sqlInsertBehaviourQuestion, newBehaviourQuestion.behaviourQuestion, _config.GetConnectionString("MySqlConnection"));
+        newBehaviourQuestion = new StudentBehavQuestionModel();
+    }
+
+    //update data
+    private async Task UpdateBehaviourQuestions()
+    {
+        string sqlUpdateDrugs = "Update offending_behaviour_questions SET OB01 = @OB01, OB02 = @OB02, OB03 = @OB03, OB04 = @OB04, OB05 = @OB05, OB06 = @OB06, OB07 = @OB07," +
+        " OB08 = @OB08, OB09 = @OB09 where StudentId_OFK =" + currentPerson;
+        await _data.SaveData(sqlUpdateDrugs, UpdateBehaviourQuestions, _config.GetConnectionString("MySqlConnection"));
+    }
+
+    private async Task EditQuestion()
+    {
+        editingStatus = true;
+    }
+
+    private async Task ShowQuestions()
+    {
+        editingStatus = false;
+    }
+
+}

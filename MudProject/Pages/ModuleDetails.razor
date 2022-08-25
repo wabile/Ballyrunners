@@ -1,0 +1,130 @@
+﻿@page "/moduleDetails/{currentCourse:int}"
+@*This page shows the Module details and list the students that are currently enroled on it. The user can click on the name of the student and see 
+  details of the student related to this module (i.e. Attendance, start date...)
+*@
+
+@using MudProject.Data
+@using DataAccess
+@using MudProject.Models
+@inject IMySQLDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager UriHelper
+
+
+<h3>Student Details</h3>
+<div class="container">
+    <section id="avail-appt-section">
+
+        @foreach (var a in curses)@*need to show from the tables personal_details and students*@
+        {
+            <MudGrid Class="justify-space-between">
+                
+                @*here starts to show the item from "personal_details" table*@
+                <MudItem xs="4"><MudText>Curse Name</MudText><MudText>@a.CurseName</MudText></MudItem>
+                <MudItem xs="6"><MudText>Start Date</MudText><MudText>@a.StartDate</MudText></MudItem>
+                <MudItem xs="6"><MudText>Surname</MudText><MudText>@a.EndDate</MudText></MudItem>
+
+
+                <MudButton class="btn btn-primary" id="editAppt" @onclick="() => EditStudent(a.CurseId)">Edit Form</MudButton>
+            </MudGrid>
+        }
+    </section>
+    <section id="edit-appt" class="mt-5">
+
+        @if (editStatus)
+        {
+            <h3>Edit Student</h3>
+            <EditForm Model="@newCurse" OnValidSubmit="@OnValidSubmit"> @*need to insert in @newStudent and @newDetails *@
+                <DataAnnotationsValidator />
+                <MudGrid>
+                    <MudItem xs="12" sm="12">
+                        <MudCard>
+                            <MudCardContent>
+                               
+                                @*here starts to update the item into "personal_details" table*@
+                                <MudTextField Label="Curse Name" HelperText="Max 8 hcaracters" @bind-Value="newCurse.CurseName" For="@(() => newCurse.CurseName)" />
+                                <MudDatePicker Label="Start Date" @bind-value="@newCurse.StartDate" />
+                                <MudDatePicker Label="End Date" @bind-value="@newCurse.EndDate" />
+                            </MudCardContent>
+                            <MudCardActions>
+                                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Submit</MudButton>
+                            </MudCardActions>
+                        </MudCard>
+                    </MudItem>
+                </MudGrid>
+            </EditForm>
+
+        }
+    </section>
+</div>
+
+
+@code {
+
+    [Parameter]
+    public int currentCurse { get; set; }
+
+    // booleans to determine what to display in the UI
+
+    bool createStatus = true;
+    bool editStatus = false;
+    bool deleteErrorMessage = false;
+
+    // error message for db delete exception
+
+    string dbErrorMessage = "";
+
+    // variable to keep track of the current appt being edited
+
+    int curseBeingEdited;
+
+    List<CursesModel>? curses;
+    List<CursesModel>? thisCurse;
+
+    private CursesModel newCurse = new CursesModel();
+
+    // Load the initial data
+    protected override async Task OnInitializedAsync(){
+        string sql = "SELECT * FROM course WHERE CurseId = " + currentCurse;
+        curses = await _data.LoadData<CursesModel, dynamic>(sql, new { }, _config.GetConnectionString("MySQLConnection"));
+    }
+
+    private async Task OnValidSubmit()
+    {
+        string sql = "INSERT INTO course (CurseName, StartDate, EndDate)" +
+        "VALUES (@CourseName, @StartDate, @EndDate);";
+        await _data.SaveData(sql, newCurse, _config.GetConnectionString("MySqlConnection"));
+        newCurse = new CursesModel();
+    }
+
+    //Edit Form
+    private async Task EditStudent(int id){
+        createStatus = false;
+        editStatus = true;
+        string sql = "SELECT * FROM courses WHERE CursesId = @CoursesId";
+        thisCurse = await _data.LoadData<CursesModel, dynamic>(sql, new { CurseId = id }, _config.GetConnectionString("MySqlConnection"));
+        curseBeingEdited = id;
+
+        //on table personal_details
+        newCurse.CurseName = thisCurse[0].CurseName;
+        newCurse.StartDate = thisCurse[0].StartDate;
+        newCurse.EndDate = thisCurse[0].EndDate;
+    }
+
+    // Update Form
+    private async Task UpdateStudent(){
+        CursesModel a = new CursesModel{
+                CurseName = new string(newCurse.CurseName),
+                StartDate = new DateTime(newCurse.StartDate.Year, newCurse.StartDate.Month, newCurse.StartDate.Day),
+                EndDate = new DateTime(newCurse.EndDate.Year, newCurse.EndDate.Month, newCurse.EndDate.Day),
+                CurseId = curseBeingEdited
+            };
+
+        string sql = "UPDATE course SET CurseName = @CurseName, StartDate = StartDate, EndDate = EndDate WHERE CurseId = @CourseId;";
+        await _data.SaveData(sql, a, _config.GetConnectionString("MySqlConnection"));
+        await OnInitializedAsync();
+        createStatus = true;
+        editStatus = false;
+    }
+
+}
